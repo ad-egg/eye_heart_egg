@@ -1,0 +1,133 @@
+/* styling that affects everything, declare variables here to have global scope */
+:root {
+    /* text */
+    --font-family: 'Gaegu', cursive;
+
+    /* dark theme default colors */
+    --background-color: #202020;
+    --color: #BBBBBB;
+    --egg-color: #AEAEAE;
+}
+
+/* light theme colors */
+[data-theme="daytime"] {
+    --background-color: #DDDDDD;
+    --color: #080808;
+    --egg-color: #00FF00;
+}
+
+/* body styling */
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    display: flex;
+    font-family: var(--font-family);
+    background-color: var(--background-color);
+    color: var(--color);
+}
+
+/* centers text and items */
+.center {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+/* styling for full-screen checkbox */
+#click-for-it {
+    height: 98vh;
+    width: 98vw;
+    border: none;
+    opacity: 0;
+    position: fixed;
+    z-index: 42;
+    background-color: #666666;
+}
+
+/* operating instructions styling */
+#operating-instructions {
+    position: fixed;
+    z-index: 0;
+}
+
+/* EGG */
+
+/* egg div styling */
+.egg {
+    display: flex;
+    flex-direction: column;
+    width: 4rem;
+    height: 8rem;
+    background: none;
+}
+
+/* top of egg styling */
+.egg-top {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+/* top left of egg styling */
+.egg-top-l {
+    width: 50%;
+    height: 100%;
+    background-color: var(--egg-color);
+    border-top-left-radius: 100%;
+}
+
+/* top right of egg styling */
+.egg-top-r {
+    width: 50%;
+    height: 100%;
+    background-color: var(--egg-color);
+    border-top-right-radius: 100%;
+}
+
+/* bottom of egg styling */
+.egg-bottom {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    flex-direction: row;
+}
+
+/* bottom left of egg styling */
+.egg-bottom-l {
+    width: 50%;
+    height: 100%;
+    background-color: var(--egg-color);
+    border-bottom-left-radius: 100%;
+}
+
+/* bottom right of egg styling */
+.egg-bottom-r {
+    width: 50%;
+    height: 100%;
+    background-color: var(--egg-color);
+    border-bottom-right-radius: 100%;
+}
+
+/* HEART */
+
+/* heart styling */
+.heart {
+    display: flex;
+    flex-direction: column;
+}
+
+/* top of heart styling */
+.heart-top {
+    display: flex;
+    flex-direction: row;
+}
+
+/* top left of heart styling */
+
+/* top right of heart styling */
+
+/* bottom of heart styling */

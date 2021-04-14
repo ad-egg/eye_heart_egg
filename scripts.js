@@ -45,4 +45,6 @@ function generateIt() {
 
     // put the egg in the DOM 
     document.getElementById("basket").appendChild(eggDiv);
+
+    console.log('you have ' + eggs + ' egg')
 }

@@ -61,6 +61,7 @@ main {
     position: fixed;
     width: 100%;
     z-index: 0;
+    font-weight: bold;
 }
 
 /* eggs container styling */

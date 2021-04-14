@@ -1,4 +1,7 @@
+let eggs = 0;
+
 function generateIt() {
+    eggs++;
 
     // div that contains the top left of egg
     let eggTopLeftDiv = document.createElement("div");

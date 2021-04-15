@@ -1,6 +1,22 @@
 let eggs = 0;
 
-function generateIt() {
+function generateEyeHeartEgg() {
+    addEgg();
+
+    let basketContents = 'you have ';
+
+    if (eggs < 1) {
+        basketContents += 'nothing';
+    }
+    else {
+        basketContents += eggs + ' egg';
+    }
+
+    // prints what you have on your screen
+    console.log(basketContents);
+}
+
+function addEgg() {
     eggs++;
 
     // div that contains the top left of egg
@@ -45,6 +61,4 @@ function generateIt() {
 
     // put the egg in the DOM 
     document.getElementById("basket").appendChild(eggDiv);
-
-    console.log('you have ' + eggs + ' egg')
 }

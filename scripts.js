@@ -62,3 +62,11 @@ function addEgg() {
     // put the egg in the DOM 
     document.getElementById("basket").appendChild(eggDiv);
 }
+
+function addEye() {
+    
+}
+
+function addHeart() {
+
+}

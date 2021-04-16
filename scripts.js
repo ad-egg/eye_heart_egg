@@ -36,7 +36,7 @@ function addEgg() {
 
     // div that contains all the divs that make up the egg 
     let eggDiv = document.createElement("div");
-    eggDiv.classList.add("egg");
+    eggDiv.classList.add("egg-box");
 
     // put the top and bottom egg divs into the big egg div 
     eggDiv.appendChild(eggTopOuterDiv);

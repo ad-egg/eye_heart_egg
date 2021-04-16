@@ -29,11 +29,20 @@
 
     <!-- main content -->
     <main>
-        <!-- giant clickable area to generate images -->
-        <input id="click-for-it" class="center" type="checkbox" onclick="generateEyeHeartEgg()">
-
-        <!-- operating instructions -->
-        <h1 id="operating-instructions" class="center">click for egg</h1>
+        <!-- pick a image to generate -->
+        <form id="select-img">
+            <span id="operating-instructions" class="center">click
+                <span id="choices">
+                    <input name="eye-heart-egg" type="radio" id="eye" value="eye">
+                    <label for="eye">eye</label>
+                    <input name="eye-heart-egg" type="radio" id="heart" value="heart">
+                    <label for="heart">heart</label>
+                    <input name="eye-heart-egg" type="radio" id="egg" value="egg" checked>
+                    <label for="egg">egg</label>
+                </span>
+            </span>
+            <button id="click-for-eye-heart-egg" class="center" type="button" onclick="generateEyeHeartEgg()"></button>
+        </form>
 
         <!-- eggs go here -->
         <div id="basket" class="center"></div>

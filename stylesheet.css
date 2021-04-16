@@ -49,23 +49,29 @@ main {
     align-content: center;
 }
 
-/* styling for full-screen checkbox */
-#click-for-it {
-    height: 100%;
-    width: 100%;
-    border: none;
-    opacity: 0;
-    position: fixed;
-    z-index: 42;
-    background-color: #666666;
-}
-
-/* operating instructions styling */
+/* style the operating instructions */
 #operating-instructions {
     position: fixed;
-    width: 100%;
-    z-index: 0;
     font-weight: bold;
+    width: 100%;
+    font-size: 2rem;
+}
+
+/* style the radio buttons and labels in form */
+#choices {
+    z-index: 42;
+}
+
+/* styling for full-screen checkbox */
+#click-for-eye-heart-egg {
+    height: 100vh;
+    width: 100%;
+    border: none;
+    padding: 0;
+    opacity: 0;
+    position: fixed;
+    z-index: 8;
+    background-color: #666666;
 }
 
 /* eggs container styling */
@@ -82,7 +88,7 @@ main {
 /* EGG */
 
 /* egg div styling */
-.egg {
+.egg-box {
     background: none;
     border: none;
     box-shadow: none;

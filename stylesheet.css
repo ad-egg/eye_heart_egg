@@ -85,6 +85,7 @@ main {
 .egg {
     background: none;
     border: none;
+    box-shadow: none;
     width: 5rem;
     height: 5rem;
     margin: 0.5rem;
@@ -93,65 +94,53 @@ main {
     z-index: -1;
 }
 
-/* top of egg styling */
-.egg-top {
+/* outer div of top of egg */
+.egg-top-outer {
     width: 4rem;
     height: 3rem;
     margin-left: auto;
     margin-right: auto;
-    display: flex;
-    flex-direction: row;
+    overflow: hidden;
 }
 
-/* top left of egg styling */
-.egg-top-l {
-    width: 50%;
-    height: 100%;
-    background-color: var(--egg-glow-color);
-    border-top-left-radius: 100%;
-    box-shadow:
-        inset 1rem 1rem 1rem var(--egg-color);
-}
-
-/* top right of egg styling */
-.egg-top-r {
-    width: 50%;
-    height: 100%;
-    background-color: var(--egg-glow-color);
-    border-top-right-radius: 100%;
-    box-shadow:
-        inset -1rem 1rem 1rem var(--egg-color);
-}
-
-/* bottom of egg styling */
-.egg-bottom {
+/* outer div of bottom of egg */
+.egg-bottom-outer {
     width: 4rem;
     height: 2rem;
     margin-left: auto;
     margin-right: auto;
-    display: flex;
-    flex-direction: row;
+    overflow: hidden;
 }
 
-/* bottom left of egg styling */
-.egg-bottom-l {
-    width: 50%;
-    height: 100%;
+/* inner div of top of egg */
+/* box-shadow order: top left, top right, bottom right, bottom left */
+.egg-top-inner {
+    width: 4rem;
+    height: 6rem;
+    border-radius: 50%;
     background-color: var(--egg-glow-color);
-    border-bottom-left-radius: 100%;
     box-shadow:
-        inset 1rem -1rem 1rem var(--egg-color);
+        inset 0.5rem 0.5rem 1rem var(--egg-color),
+        inset -0.5rem 0.5rem 1rem var(--egg-color),
+        inset 0.5rem -0.5rem 1rem var(--egg-color),
+        inset -0.5rem -0.5rem 1rem var(--egg-color);
 }
 
-/* bottom right of egg styling */
-.egg-bottom-r {
-    width: 50%;
-    height: 100%;
+/* inner div of bottom of egg */
+/* box-shadow order: top left, top right, bottom right, bottom left */
+.egg-bottom-inner {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
     background-color: var(--egg-glow-color);
-    border-bottom-right-radius: 100%;
+    margin-top: -2rem;
     box-shadow:
-        inset -1rem -1rem 1rem var(--egg-color);
+        inset 0.5rem 0.5rem 1rem var(--egg-color),
+        inset -0.5rem 0.5rem 1rem var(--egg-color),
+        inset 0.5rem -0.5rem 1rem var(--egg-color),
+        inset -0.5rem -0.5rem 1rem var(--egg-color);
 }
+
 
 /* HEART */
 
@@ -171,8 +160,8 @@ main {
 .heart {
     transform: rotate(45deg);
     background-color: var(--heart-color);
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
 }
 
 /* the circles for top of heart */
@@ -180,8 +169,8 @@ main {
 .heart::after {
     content: '';
     background-color: var(--heart-color);
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    height: 2rem;
     position: absolute;
     border-radius: 50%;
 }
@@ -189,12 +178,12 @@ main {
 /* top left circle of heart */
 .heart::before {
     top: 0;
-    right: 1.25rem;
+    right: 1rem;
 }
 
 /* top right circle of heart*/
 .heart::after {
-    top: -1.25rem;
+    top: -1rem;
     left: 0;
 }
 

@@ -1,63 +1,46 @@
+let eyes = 0;
+let hearts = 0;
 let eggs = 0;
 
 function generateEyeHeartEgg() {
     addEgg();
 
-    let basketContents = 'you have ';
-
-    if (eggs < 1) {
-        basketContents += 'nothing';
-    }
-    else {
-        basketContents += eggs + ' egg';
-    }
-
-    // prints what you have on your screen
-    console.log(basketContents);
+    // log to console what you've clicked onto your screen 
+    logBasket();
 }
 
 function addEgg() {
     eggs++;
 
-    // div that contains the top left of egg
-    let eggTopLeftDiv = document.createElement("div");
-    eggTopLeftDiv.classList.add("egg-top-l");
-
-    // div that contains the top right of egg
-    let eggTopRightDiv = document.createElement("div");
-    eggTopRightDiv.classList.add("egg-top-r");
+    // div that contains the inner top of egg
+    let eggTopInnerDiv = document.createElement("div");
+    eggTopInnerDiv.classList.add("egg-top-inner");
 
     // div that contains the divs that make up top half of egg 
-    let eggTopDiv = document.createElement("div");
-    eggTopDiv.classList.add("egg-top");
+    let eggTopOuterDiv = document.createElement("div");
+    eggTopOuterDiv.classList.add("egg-top-outer");
     
     // assemble top of egg
-    eggTopDiv.appendChild(eggTopLeftDiv);
-    eggTopDiv.appendChild(eggTopRightDiv);
+    eggTopOuterDiv.appendChild(eggTopInnerDiv);
 
-    // div that contains bottom left of egg
-    let eggBottomLeftDiv = document.createElement("div");
-    eggBottomLeftDiv.classList.add("egg-bottom-l");
-
-    // div that contains bottom right of egg
-    let eggBottomRightDiv = document.createElement("div");
-    eggBottomRightDiv.classList.add("egg-bottom-r");
+    // div that contains inner bottom of egg
+    let eggBottomInnerDiv = document.createElement("div");
+    eggBottomInnerDiv.classList.add("egg-bottom-inner");
 
     // div that contains the divs that make up bottom half of egg 
-    let eggBottomDiv = document.createElement("div");
-    eggBottomDiv.classList.add("egg-bottom");
+    let eggBottomOuterDiv = document.createElement("div");
+    eggBottomOuterDiv.classList.add("egg-bottom-outer");
 
     // assemble bottom of egg
-    eggBottomDiv.appendChild(eggBottomLeftDiv);
-    eggBottomDiv.appendChild(eggBottomRightDiv);
+    eggBottomOuterDiv.appendChild(eggBottomInnerDiv);
 
     // div that contains all the divs that make up the egg 
     let eggDiv = document.createElement("div");
     eggDiv.classList.add("egg");
 
     // put the top and bottom egg divs into the big egg div 
-    eggDiv.appendChild(eggTopDiv);
-    eggDiv.appendChild(eggBottomDiv);
+    eggDiv.appendChild(eggTopOuterDiv);
+    eggDiv.appendChild(eggBottomOuterDiv);
 
     // put the egg in the DOM 
     document.getElementById("basket").appendChild(eggDiv);
@@ -69,4 +52,26 @@ function addEye() {
 
 function addHeart() {
 
+}
+
+function logBasket() {
+    let basketContents = 'you have ';
+
+    if (eyes === 0 && hearts === 0 && eggs === 0) {
+        basketContents += 'nothing';
+    }
+    else {
+        if (eyes > 0) {
+            basketContents += eyes + ' eye ';
+        }
+        if (hearts > 0) {
+            basketContents += hearts + ' heart ';
+        }
+        if (eggs > 0) {
+            basketContents += eggs + ' egg '
+        }
+    }
+    
+    // prints what you have on your screen
+    console.log(basketContents);
 }

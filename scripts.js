@@ -30,10 +30,6 @@ function addEye() {}
 function addHeart() {
     hearts++;
 
-    // blank square div for heart
-    let heartSqBlank = document.createElement('div');
-    heartSqBlank.classList.add('heart-square-blank');
-
     // first circle div for heart
     let heartCircOne = document.createElement('div');
     heartCircOne.classList.add('heart-circle-one');
@@ -51,7 +47,6 @@ function addHeart() {
     tiltedHeart.classList.add('tilted-heart');
 
     // assemble the heart
-    tiltedHeart.appendChild(heartSqBlank);
     tiltedHeart.appendChild(heartCircOne);
     tiltedHeart.appendChild(heartCircTwo);
     tiltedHeart.appendChild(heartSq);

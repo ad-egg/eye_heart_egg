@@ -187,15 +187,6 @@ main {
     margin-left: 0.25rem;
 }
 
-/* blank square */
-.heart-square-blank {
-    width: 3rem;
-    height: 3rem;
-    position: absolute;
-    top: 0rem;
-    left: 0rem;
-}
-
 /* first circle of heart */
 .heart-circle-one {
     width: 3rem;

@@ -206,6 +206,11 @@ main {
     position: absolute;
     right: 0rem;
     top: 0rem;
+    animation-name: warm;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
 /* second circle of heart */
@@ -217,6 +222,11 @@ main {
     position: absolute;
     left: 0rem;
     bottom: 0rem;
+    animation-name: warm;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
 /* square of heart */
@@ -227,6 +237,11 @@ main {
     position: absolute;
     right: 0rem;
     bottom: 0rem;
+    animation-name: warm;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
 
 /* the CSS heart from tutorial */
@@ -266,4 +281,22 @@ main {
     content: '\2665';
     color: red;
     font-size: 5rem;
+  }
+
+  /* ANIMATIONS */
+
+  /* change bg color red-orange-yellow-orange */
+  @keyframes warm {
+    0%, 100% {
+        background-color: #FF0000;
+    }
+    25% {
+        background-color: #FFA500;
+    }
+    50% {
+        background-color: #FFFF00;
+    }
+    75% {
+    background-color: #FFA500;
+    }
   }

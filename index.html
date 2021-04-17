@@ -30,18 +30,20 @@
     <!-- main content -->
     <main>
         <!-- pick a image to generate -->
-        <form name="select-img">
-            <span id="operating-instructions" class="center">click for 
-                <span id="choices">
-                    <input name="choice-eye-heart-egg" type="radio" id="input-eye" value="eye">
-                    <label for="input-eye">eye</label>
-                    <input name="choice-eye-heart-egg" type="radio" id="input-heart" value="heart">
-                    <label for="input-heart">heart</label>
-                    <input name="choice-eye-heart-egg" type="radio" id="input-egg" value="egg" checked>
-                    <label for="input-egg">egg</label>
+        <form name="choiceform">
+            <div id="entire-screen">
+                <span id="operating-instructions" class="center">click for 
+                    <span id="choices-radio">
+                        <input name="choices" type="radio" id="input-eye" value="eye">
+                        <label for="input-eye">eye</label>
+                        <input name="choices" type="radio" id="input-heart" value="heart">
+                        <label for="input-heart">heart</label>
+                        <input name="choices" type="radio" id="input-egg" value="egg" checked>
+                        <label for="input-egg">egg</label>
+                    </span>
                 </span>
-            </span>
-            <button id="click-for-eye-heart-egg" class="center" type="button" onclick="generateEyeHeartEgg()"></button>
+                <button id="click-for-eye-heart-egg" class="center" type="button" onclick="generateEyeHeartEgg()"></button>
+            </div>
         </form>
 
         <!-- eggs go here -->

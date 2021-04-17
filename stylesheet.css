@@ -49,30 +49,44 @@ main {
     align-content: center;
 }
 
+/* takes up whole screen like table column */
+/* choices is one row at top */
+/* button is one row at bottom that takes up remaining space */
+#entire-screen {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    display: table-column;
+    z-index: 42;
+}
+
 /* style the operating instructions */
 #operating-instructions {
-    position: fixed;
     font-weight: bold;
+    display: table-row;
     width: 100%;
     font-size: 2rem;
     background-color: #090909;
 }
 
-/* style the radio buttons and labels in form */
-#choices, #input-eye, #input-heart, #input-egg, #choices label {
-    z-index: 42;
+/* hide the radio buttons */
+#input-eye, #input-heart, #input-egg {
+    width: 0rem;
+    height: 0rem;
+    margin: 0rem;
 }
+
+/* style the radio input labels */
+#choices-radio label {}
 
 /* styling for full-screen button */
 #click-for-eye-heart-egg {
-    height: 100vh;
+    display: table-row;
+    height: 100%;
     width: 100%;
     border: none;
     padding: 0;
     opacity: 0;
-    position: fixed;
-    z-index: 8;
-    background-color: #666666;
 }
 
 /* eggs container styling */
@@ -84,6 +98,7 @@ main {
     width: 100%;
     height: 100%;
     border: none;
+    margin-top: 3rem;
 }
 
 /* EGG */

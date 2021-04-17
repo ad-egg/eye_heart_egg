@@ -3,10 +3,66 @@ let hearts = 0;
 let eggs = 0;
 
 function generateEyeHeartEgg() {
-    addEgg();
+    // get the screen-sized form 
+    const form = document.forms.choiceform;
+
+    // gets all the choices
+    const choices = form.elements.choices;
+
+    // gets the selected value
+    const choice = choices.value
+
+    // execute function according to choice
+    if (choice === 'eye') {
+        addEye();
+    } else if (choice === 'heart') {
+        addHeart();
+    } else {
+        addEgg();
+    }
 
     // log to console what you've clicked onto your screen 
     logBasket();
+}
+
+function addEye() {}
+
+function addHeart() {
+    hearts++;
+
+    // blank square div for heart
+    let heartSqBlank = document.createElement('div');
+    heartSqBlank.classList.add('heart-square-blank');
+
+    // first circle div for heart
+    let heartCircOne = document.createElement('div');
+    heartCircOne.classList.add('heart-circle-one');
+
+    // second circle div for heart
+    let heartCircTwo = document.createElement('div');
+    heartCircTwo.classList.add('heart-circle-two');
+
+    // square div for heart
+    let heartSq = document.createElement('div');
+    heartSq.classList.add('heart-square');
+
+    // tilted square div for heart
+    let tiltedHeart = document.createElement('div');
+    tiltedHeart.classList.add('tilted-heart');
+
+    // assemble the heart
+    tiltedHeart.appendChild(heartSqBlank);
+    tiltedHeart.appendChild(heartCircOne);
+    tiltedHeart.appendChild(heartCircTwo);
+    tiltedHeart.appendChild(heartSq);
+
+    // square box for heart
+    let heartBox = document.createElement('div');
+    heartBox.classList.add('heart-box')
+    heartBox.appendChild(tiltedHeart);
+
+    // put the heart in the DOM
+    document.getElementById('basket').appendChild(heartBox);
 }
 
 function addEgg() {
@@ -44,45 +100,6 @@ function addEgg() {
 
     // put the egg in the DOM 
     document.getElementById('basket').appendChild(eggDiv);
-}
-
-function addEye() {}
-
-function addHeart() {
-    hearts++;
-
-    // blank square div for heart
-    let heartSqBlank = document.createElement('div');
-    heartSqBlank.classList.add('heart-square-blank');
-
-    // first circle div for heart
-    let heartCircOne = document.createElement('div');
-    heartCircOne.classList.add('heart-circle-one');
-
-    // second circle div for heart
-    let heartCircTwo = document.createElement('div');
-    heartCircTwo.classList.add('heart-circle-two');
-
-    // square div for heart
-    let heartSq = document.createElement('div');
-    heartSq.classList.add('heart-square');
-
-    // tilted square div for heart
-    let tiltedHeart = document.createElement('div');
-    tiltedHeart.classList.add('tilted-heart');
-
-    // assemble the heart
-    tiltedHeart.appendChild(heartSqBlank);
-    tiltedHeart.appendChild(heartCircOne);
-    tiltedHeart.appendChild(heartCircTwo);
-    tiltedHeart.appendChild(heartSq);
-
-    // square box for heart
-    let heartBox = document.createElement('div');
-    heartBox.appendChild(tiltedHeart);
-
-    // put the heart in the DOM
-    document.getElementById('basket').appendChild(heartBox);
 }
 
 function logBasket() {

@@ -58,7 +58,7 @@ main {
 }
 
 /* style the radio buttons and labels in form */
-#choices {
+#choices, #input-eye, #input-heart, #input-egg, #choices label {
     z-index: 42;
 }
 
@@ -161,35 +161,86 @@ main {
     z-index: -1;
 }
 
-/* the CSS heart */
+/* box to hold square and circles that make up heart */
+.tilted-heart {
+    transform: rotate(45deg);
+    position: absolute;
+    height: 4.5rem;
+    width: 4.5rem;
+    margin-top: -0.625rem;
+    margin-left: 0.25rem;
+}
+
+/* blank square */
+.heart-square-blank {
+    width: 3rem;
+    height: 3rem;
+    position: absolute;
+    top: 0rem;
+    left: 0rem;
+}
+
+/* first circle of heart */
+.heart-circle-one {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--heart-color);
+    border-radius: 50%;
+    position: absolute;
+    right: 0rem;
+    top: 0rem;
+}
+
+/* second circle of heart */
+.heart-circle-two {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--heart-color);
+    border-radius: 50%;
+    position: absolute;
+    left: 0rem;
+    bottom: 0rem;
+}
+
+/* square of heart */
+.heart-square {
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--heart-color);
+    position: absolute;
+    right: 0rem;
+    bottom: 0rem;
+}
+
+/* the CSS heart from tutorial */
 /* the tilted square for bottom of heart */
-.heart {
+.tutorial-heart {
     transform: rotate(45deg);
     background-color: var(--heart-color);
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
 }
 
 /* the circles for top of heart */
-.heart::before,
-.heart::after {
+.tutorial-heart::before,
+.tutorial-heart::after {
     content: '';
     background-color: var(--heart-color);
-    width: 2rem;
-    height: 2rem;
+    width: 3rem;
+    height: 3rem;
     position: absolute;
     border-radius: 50%;
 }
 
 /* top left circle of heart */
-.heart::before {
+.tutorial-heart::before {
     top: 0;
-    right: 1rem;
+    right: 1.5rem;
 }
 
 /* top right circle of heart*/
-.heart::after {
-    top: -1rem;
+.tutorial-heart::after {
+    top: -1.5rem;
     left: 0;
 }
 

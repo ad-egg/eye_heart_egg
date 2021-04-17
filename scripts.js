@@ -13,45 +13,76 @@ function addEgg() {
     eggs++;
 
     // div that contains the inner top of egg
-    let eggTopInnerDiv = document.createElement("div");
-    eggTopInnerDiv.classList.add("egg-top-inner");
+    let eggTopInnerDiv = document.createElement('div');
+    eggTopInnerDiv.classList.add('egg-top-inner');
 
     // div that contains the divs that make up top half of egg 
-    let eggTopOuterDiv = document.createElement("div");
-    eggTopOuterDiv.classList.add("egg-top-outer");
+    let eggTopOuterDiv = document.createElement('div');
+    eggTopOuterDiv.classList.add('egg-top-outer');
     
     // assemble top of egg
     eggTopOuterDiv.appendChild(eggTopInnerDiv);
 
     // div that contains inner bottom of egg
-    let eggBottomInnerDiv = document.createElement("div");
-    eggBottomInnerDiv.classList.add("egg-bottom-inner");
+    let eggBottomInnerDiv = document.createElement('div');
+    eggBottomInnerDiv.classList.add('egg-bottom-inner');
 
     // div that contains the divs that make up bottom half of egg 
-    let eggBottomOuterDiv = document.createElement("div");
-    eggBottomOuterDiv.classList.add("egg-bottom-outer");
+    let eggBottomOuterDiv = document.createElement('div');
+    eggBottomOuterDiv.classList.add('egg-bottom-outer');
 
     // assemble bottom of egg
     eggBottomOuterDiv.appendChild(eggBottomInnerDiv);
 
     // div that contains all the divs that make up the egg 
-    let eggDiv = document.createElement("div");
-    eggDiv.classList.add("egg-box");
+    let eggDiv = document.createElement('div');
+    eggDiv.classList.add('egg-box');
 
     // put the top and bottom egg divs into the big egg div 
     eggDiv.appendChild(eggTopOuterDiv);
     eggDiv.appendChild(eggBottomOuterDiv);
 
     // put the egg in the DOM 
-    document.getElementById("basket").appendChild(eggDiv);
+    document.getElementById('basket').appendChild(eggDiv);
 }
 
-function addEye() {
-    
-}
+function addEye() {}
 
 function addHeart() {
+    hearts++;
 
+    // blank square div for heart
+    let heartSqBlank = document.createElement('div');
+    heartSqBlank.classList.add('heart-square-blank');
+
+    // first circle div for heart
+    let heartCircOne = document.createElement('div');
+    heartCircOne.classList.add('heart-circle-one');
+
+    // second circle div for heart
+    let heartCircTwo = document.createElement('div');
+    heartCircTwo.classList.add('heart-circle-two');
+
+    // square div for heart
+    let heartSq = document.createElement('div');
+    heartSq.classList.add('heart-square');
+
+    // tilted square div for heart
+    let tiltedHeart = document.createElement('div');
+    tiltedHeart.classList.add('tilted-heart');
+
+    // assemble the heart
+    tiltedHeart.appendChild(heartSqBlank);
+    tiltedHeart.appendChild(heartCircOne);
+    tiltedHeart.appendChild(heartCircTwo);
+    tiltedHeart.appendChild(heartSq);
+
+    // square box for heart
+    let heartBox = document.createElement('div');
+    heartBox.appendChild(tiltedHeart);
+
+    // put the heart in the DOM
+    document.getElementById('basket').appendChild(heartBox);
 }
 
 function logBasket() {

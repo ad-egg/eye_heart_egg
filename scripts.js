@@ -95,7 +95,7 @@ function addEgg() {
     // check if the egg is a power of 2 
     // or if it's egg number 42 
     if (Math.log2(eggs) % 1 === 0) {
-        eggDiv.classList.add('wobble');
+        eggDiv.classList.add('shake');
     }
 
     // put the top and bottom egg divs into the big egg div 

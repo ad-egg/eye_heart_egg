@@ -3,19 +3,43 @@
     /* text */
     --font-family: 'Gaegu', cursive;
 
+    /* colors */
+    --black: #000000;
+    --darkest-gray: #090909;
+    --darker-gray: #080808;
+    --dark-gray: #202020;
+    --gray: #888888;
+    --light-gray: #BBBBBB;
+    --lighter-gray: #DDDDDD;
+    --lightest-gray: #EEEEEE; 
+    --white: #FFFFFF;
+    --ivory: #FFFFF0;
+    --cream: #FFFDD0;
+    --beige: #F5F5DC;
+    --red: #FF0000;
+    --orange: #FFA500;
+    --yellow: #FFFF00;
+    --green: #00FF00;
+    --cyan: #00FFFF;
+    --blue: #0000FF;
+    --indigo: #A500FF;
+    --purple: #FF00FF;
+    --lavender: #FFA5FF;
+    --egg: #FACED0;
+
     /* dark theme default colors */
-    --background-color: #202020;
-    --color: #BBBBBB;
-    --egg-glow-color: #FFFFFF;
-    --egg-color: #FACED0;
-    --heart-color: #FF0000;
+    --background-color: var(--dark-gray);
+    --color: var(--lighter-gray);
+    --egg-glow-color: var(--white);
+    --egg-color: var(--egg);
+    --heart-color: var(--red);
 }
 
 /* light theme colors */
 [data-theme="daytime"] {
-    --background-color: #DDDDDD;
-    --color: #080808;
-    --egg-glow-color: #FFFFFF;
+    --background-color: var(--med-gray);
+    --color: var(--near-black);
+    --egg-glow-color: var(--white);
     --egg-color: #00FF00;
     --heart-color: #FF0000;
 }
@@ -67,7 +91,7 @@ main {
     display: table-row;
     width: 100%;
     font-size: 2rem;
-    background-color: #090909;
+    background-color: var(--darkest-gray);
 }
 
 /* hide the radio buttons */
@@ -164,7 +188,6 @@ main {
         inset -0.5rem -0.5rem 1rem var(--egg-color);
 }
 
-
 /* HEART */
 
 /* heart div styling */
@@ -196,11 +219,6 @@ main {
     position: absolute;
     right: 0rem;
     top: 0rem;
-    animation-name: warm;
-    animation-duration: 2s;
-    animation-delay: 0s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
 }
 
 /* second circle of heart */
@@ -212,11 +230,6 @@ main {
     position: absolute;
     left: 0rem;
     bottom: 0rem;
-    animation-name: warm;
-    animation-duration: 2s;
-    animation-delay: 0s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
 }
 
 /* square of heart */
@@ -227,11 +240,6 @@ main {
     position: absolute;
     right: 0rem;
     bottom: 0rem;
-    animation-name: warm;
-    animation-duration: 2s;
-    animation-delay: 0s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
 }
 
 /* the CSS heart from tutorial */
@@ -269,24 +277,57 @@ main {
 /* ascii heart */
 .ascii-heart::before {
     content: '\2665';
-    color: red;
+    color: var(--heart-color);
     font-size: 5rem;
-  }
+}
 
-  /* ANIMATIONS */
+/* ANIMATIONS */
 
-  /* change bg color red-orange-yellow-orange */
-  @keyframes warm {
+/* linear change bg color red-orange-yellow-orange 2s nonstop */
+.warm {
+    animation-name: warm;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* linear rotate element 22.5deg 0.125s nonstop */
+.wobble {
+    animation-name: wobble;
+    animation-duration: 0.125s;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
+/* KEYFRAMES */
+
+/* change bg color red-orange-yellow-orange */
+@keyframes warm {
     0%, 100% {
-        background-color: #FF0000;
+        background-color: var(--red);
     }
     25% {
-        background-color: #FFA500;
+        background-color: var(--orange);
     }
     50% {
-        background-color: #FFFF00;
+        background-color: var(--yellow);
     }
     75% {
-    background-color: #FFA500;
+        background-color: var(--orange);
     }
-  }
+}
+
+/* 0deg 22.5deg 0deg -22.5deg 0deg */
+@keyframes wobble {
+    0%, 50%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(22.5deg);
+    }
+    75% {
+        transform: rotate(-22.5deg);
+    }
+}

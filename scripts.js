@@ -33,14 +33,17 @@ function addHeart() {
     // first circle div for heart
     let heartCircOne = document.createElement('div');
     heartCircOne.classList.add('heart-circle-one');
+    heartCircOne.classList.add('warm');
 
     // second circle div for heart
     let heartCircTwo = document.createElement('div');
     heartCircTwo.classList.add('heart-circle-two');
+    heartCircTwo.classList.add('warm');
 
     // square div for heart
     let heartSq = document.createElement('div');
     heartSq.classList.add('heart-square');
+    heartSq.classList.add('warm');
 
     // tilted square div for heart
     let tiltedHeart = document.createElement('div');

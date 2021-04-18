@@ -283,6 +283,15 @@ main {
 
 /* ANIMATIONS */
 
+/* scales down to 98% */
+.contractions {
+    animation-name: contractions;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
 /* linear change bg color red-orange-yellow-orange 2s nonstop */
 .warm {
     animation-name: warm;
@@ -302,6 +311,16 @@ main {
 }
 
 /* KEYFRAMES */
+
+/* scale down to 98% */
+@keyframes contractions {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(0.98);
+    }
+}
 
 /* change bg color red-orange-yellow-orange */
 @keyframes warm {

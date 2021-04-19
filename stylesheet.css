@@ -283,10 +283,10 @@ main {
 
 /* ANIMATIONS */
 
-/* linear rotate element 22.5deg 0.125s nonstop */
-.shake {
-    animation-name: shake;
-    animation-duration: 0.125s;
+/* scales down to 98% */
+.contractions {
+    animation-name: contractions;
+    animation-duration: 1s;
     animation-delay: 0s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -301,18 +301,24 @@ main {
     animation-iteration-count: infinite;
 }
 
+/* linear rotate element 22.5deg 0.125s nonstop */
+.shake {
+    animation-name: shake;
+    animation-duration: 0.125s;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
 /* KEYFRAMES */
 
-/* 0deg 22.5deg 0deg -22.5deg 0deg */
-@keyframes shake {
-    0%, 50%, 100% {
-        transform: rotate(0deg);
+/* scale down to 98% */
+@keyframes contractions {
+    0%, 100% {
+        transform: scale(1);
     }
-    25% {
-        transform: rotate(22.5deg);
-    }
-    75% {
-        transform: rotate(-22.5deg);
+    50% {
+        transform: scale(0.8);
     }
 }
 
@@ -329,5 +335,18 @@ main {
     }
     75% {
         background-color: var(--orange);
+    }
+}
+
+/* 0deg 22.5deg 0deg -22.5deg 0deg */
+@keyframes shake {
+    0%, 50%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(22.5deg);
+    }
+    75% {
+        transform: rotate(-22.5deg);
     }
 }

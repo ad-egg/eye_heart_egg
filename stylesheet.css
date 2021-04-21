@@ -276,16 +276,22 @@ main {
 
 /* ascii heart */
 .ascii-heart::before {
-    content: '\2665';
+    content: '\2764';
     color: var(--heart-color);
     font-size: 5rem;
+}
+
+/* heart using hex code */
+.hex-heart {
+    color: var(--heart-color);
+    font-size: 4rem;
 }
 
 /* ANIMATIONS */
 
 /* scales down to 98% */
 .contractions {
-    animation-name: contractions;
+    animation-name: heartbeat;
     animation-duration: 1s;
     animation-delay: 0s;
     animation-timing-function: linear;
@@ -312,13 +318,13 @@ main {
 
 /* KEYFRAMES */
 
-/* scale down to 98% */
-@keyframes contractions {
+/* change font-size */
+@keyframes heartbeat {
     0%, 100% {
-        transform: scale(1);
+        font-size: 4rem;
     }
     50% {
-        transform: scale(0.8);
+        font-size: 3rem;
     }
 }
 

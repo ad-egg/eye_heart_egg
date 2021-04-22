@@ -289,10 +289,19 @@ main {
 
 /* ANIMATIONS */
 
-/* scales down to 98% */
-.contractions {
+/* beating hex code heart */
+.heartbeat {
     animation-name: heartbeat;
     animation-duration: 1s;
+    animation-delay: 0s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+/* linear rotate element 22.5deg 0.125s nonstop */
+.shake {
+    animation-name: shake;
+    animation-duration: 0.125s;
     animation-delay: 0s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
@@ -307,15 +316,6 @@ main {
     animation-iteration-count: infinite;
 }
 
-/* linear rotate element 22.5deg 0.125s nonstop */
-.shake {
-    animation-name: shake;
-    animation-duration: 0.125s;
-    animation-delay: 0s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
 /* KEYFRAMES */
 
 /* change font-size */
@@ -323,8 +323,24 @@ main {
     0%, 100% {
         font-size: 4rem;
     }
-    50% {
+    25%, 75% {
         font-size: 3rem;
+    }
+    50% {
+        font-size: 4rem;
+    }
+}
+
+/* 0deg 22.5deg 0deg -22.5deg 0deg */
+@keyframes shake {
+    0%, 50%, 100% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(22.5deg);
+    }
+    75% {
+        transform: rotate(-22.5deg);
     }
 }
 
@@ -341,18 +357,5 @@ main {
     }
     75% {
         background-color: var(--orange);
-    }
-}
-
-/* 0deg 22.5deg 0deg -22.5deg 0deg */
-@keyframes shake {
-    0%, 50%, 100% {
-        transform: rotate(0deg);
-    }
-    25% {
-        transform: rotate(22.5deg);
-    }
-    75% {
-        transform: rotate(-22.5deg);
     }
 }

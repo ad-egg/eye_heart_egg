@@ -188,6 +188,72 @@ main {
         inset -0.5rem -0.5rem 1rem var(--egg-color);
 }
 
+/* EYE */
+
+/* div container for eye */
+.eye-box {
+    background: none;
+    border: none;
+    width: 5rem;
+    height: 5rem;
+    margin: 0.5rem;
+    z-index: -1;
+}
+
+/* round eye sclera */
+.round-eye {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    background-color: var(--white);
+}
+
+/* iris of round eye */
+.round-eye-iris {
+    border-radius: 50%;
+}
+
+/* pupil of round eye */
+.round-eye-pupil {
+    border-radius: 50%;
+    background-color: var(--black);
+}
+
+/* reflected light in round eye */
+.round-eye-light {
+    border-radius: 50%;
+    background-color: var(--white);
+    opacity: 0.5;
+}
+
+/* sclera of human eye, tilted 45deg */
+.tilted-human-eye {
+    height: 3.5rem;
+    width: 3.5rem;
+    transform: rotate(45deg);
+    position: absolute;
+    background-color: var(--white);
+    border-radius: 75% 0% 75% 0%;
+}
+
+/* iris of human eye */
+.human-eye-iris {
+    border-radius: 50%;
+}
+
+/* pupil of human eye */
+.human-eye-pupil {
+    border-radius: 50%;
+    background-color: var(--black);
+}
+
+/* reflected light in human eye */
+.human-eye-light {
+    border-radius: 50%;
+    background-color: var(--white);
+    opacity: 0.5;
+}
+
 /* HEART */
 
 /* heart div styling */

@@ -202,6 +202,7 @@ main {
 
 /* round eye sclera */
 .round-eye {
+    position: absolute;
     height: 5rem;
     width: 5rem;
     border-radius: 50%;
@@ -210,20 +211,38 @@ main {
 
 /* iris of round eye */
 .round-eye-iris {
+    position: absolute;
+    margin: 1rem;
+    height: 3rem;
+    width: 3rem;
     border-radius: 50%;
+    background: rgb(155,169,255);
+    background: -moz-radial-gradient(circle, rgba(155,169,255,1) 0%, rgba(66,0,103,1) 90%);
+    background: -webkit-radial-gradient(circle, rgba(155,169,255,1) 0%, rgba(66,0,103,1) 90%);
+    background: radial-gradient(circle, rgba(155,169,255,1) 0%, rgba(66,0,103,1) 90%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9ba9ff",endColorstr="#420067",GradientType=1);
 }
 
 /* pupil of round eye */
 .round-eye-pupil {
+    position: absolute;
+    margin: 0.75rem;
+    height: 1.5rem;
+    width: 1.5rem;
     border-radius: 50%;
     background-color: var(--black);
 }
 
 /* reflected light in round eye */
 .round-eye-light {
+    position: absolute;
     border-radius: 50%;
     background-color: var(--white);
-    opacity: 0.5;
+    opacity: 0.75;
+    height: 1rem;
+    width: 1rem;
+    right: 0rem;
+    top: 0rem;
 }
 
 /* sclera of human eye, tilted 45deg */
@@ -233,7 +252,7 @@ main {
     transform: rotate(45deg);
     position: absolute;
     background-color: var(--white);
-    border-radius: 75% 0% 75% 0%;
+    border-radius: 100% 0% 100% 0%;
 }
 
 /* iris of human eye */

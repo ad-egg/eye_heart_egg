@@ -24,8 +24,11 @@
     --blue: #0000FF;
     --indigo: #A500FF;
     --purple: #FF00FF;
+    --deep-maroon: #820000;
     --maroon: #800000;
     --brown: #A52A2A;
+    --dark-red: #A30000;
+    --med-dark-red: #CC0000;
     --navy-blue: #000080;
     --cyan-blue: #008bff;
     --med-light-cyan-blue: #40a8ff;
@@ -42,7 +45,7 @@
     --heart-color: var(--red);
     --eyeball-color: var(--white);
     --eyeball-gradient: var(--light-gray);
-    --eyeball-shadow: var(--darker-gray);
+    --eyeball-shadow: var(--deep-maroon);
     --iris-color: var(--cyan-blue);
     --iris-gradient: var(--light-cyan-blue);
     --iris-shadow: var(--navy-blue);

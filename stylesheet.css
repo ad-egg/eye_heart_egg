@@ -232,11 +232,11 @@ main {
         inset 0.05rem 0.05rem 0.5rem var(--eyeball-shadow),
         inset -0.05rem 0.05rem 0.5rem var(--eyeball-shadow),
         inset 0.05rem -0.05rem 0.5rem var(--eyeball-shadow),
-        inset -0.05rem -0.05rem 0.5rem var(--eyeball-shadow);
+        inset -0.05rem -0.05rem 0.5rem var(--eyeball-shadow),
+        0rem 0rem 0.5rem 0.0625rem var(--eyeball-shadow);
 }
 
 /* reflected light in eyeball */
-/* box-shadow order: top left, top right, bottom right, bottom left */
 .eyeball-light {
     position: absolute;
     border-radius: 50%;
@@ -246,11 +246,7 @@ main {
     width: 0.75rem;
     right: 1.25rem;
     top: 1.25rem;
-    box-shadow:
-        0.5rem 0.5rem 1rem var(--white),
-        -0.5rem 0.5rem 1rem var(--white),
-        0.5rem -0.5rem 1rem var(--white),
-        -0.5rem -0.5rem 1rem var(--white);
+    box-shadow: 0rem 0rem 0.125rem 0.125rem var(--white);
 }
 
 /* iris of eyeball */

@@ -25,7 +25,35 @@ function generateEyeHeartEgg() {
     logBasket();
 }
 
-function addEye() {}
+function addEye() {
+    eyes++;
+
+    // pupil for eyeball
+    let eyeballPupil = document.createElement('div');
+    eyeballPupil.classList.add('eyeball-pupil');
+
+    // iris for eyeball
+    eyeballIris = document.createElement('div');
+    eyeballIris.classList.add('eyeball-iris');
+
+    // put pupil in iris
+    eyeballIris.appendChild(eyeballPupil);
+
+    // make eyeball
+    let eyeball = document.createElement('div');
+    eyeball.classList.add('eyeball');
+
+    // put iris in eyeball
+    eyeball.appendChild(eyeballIris);
+
+    // container div for eyeball
+    let eyeBox = document.createElement('div');
+    eyeBox.classList.add('eye-box');
+    eyeBox.appendChild(eyeball);
+
+    // put the eyeball in the DOM
+    document.getElementById('basket').appendChild(eyeBox);
+}
 
 function addHeart() {
     hearts++;

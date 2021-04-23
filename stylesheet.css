@@ -24,15 +24,24 @@
     --blue: #0000FF;
     --indigo: #A500FF;
     --purple: #FF00FF;
-    --lavender: #FFA5FF;
-    --egg: #FACED0;
+    --maroon: #800000;
+    --brown: #A52A2A;
+    --navy-blue: #000080;
+    --cyan-blue: #008bff;
+    --light-magenta: #FFA5FF;
+    --sepia: #F4ECD8;
+    --light-pink-red: #FACED0;
 
     /* dark theme default colors */
     --background-color: var(--dark-gray);
     --color: var(--lighter-gray);
     --egg-glow-color: var(--white);
-    --egg-color: var(--egg);
+    --egg-color: var(--light-pink-red);
     --heart-color: var(--red);
+    --eyeball-shadow: var(--darker-gray);
+    --iris-color: var(--cyan-blue);
+    --iris-gradient: var(--gray);
+    --iris-shadow: var(--navy-blue);
 }
 
 /* light theme colors */
@@ -200,49 +209,63 @@ main {
     z-index: -1;
 }
 
-/* round eye sclera */
-.round-eye {
+/* eyeball sclera */
+/* box-shadow order: top left, top right, bottom right, bottom left */
+.eyeball {
     position: absolute;
     height: 5rem;
     width: 5rem;
     border-radius: 50%;
+    overflow: hidden;
     background-color: var(--white);
+    box-shadow:
+        inset 0.05rem 0.05rem 0.5rem var(--eyeball-shadow),
+        inset -0.05rem 0.05rem 0.5rem var(--eyeball-shadow),
+        inset 0.05rem -0.05rem 0.5rem var(--eyeball-shadow),
+        inset -0.05rem -0.05rem 0.5rem var(--eyeball-shadow);
 }
 
-/* iris of round eye */
-.round-eye-iris {
-    position: absolute;
-    margin: 1rem;
-    height: 3rem;
-    width: 3rem;
-    border-radius: 50%;
-    background: rgb(155,169,255);
-    background: -moz-radial-gradient(circle, rgba(155,169,255,1) 0%, rgba(66,0,103,1) 90%);
-    background: -webkit-radial-gradient(circle, rgba(155,169,255,1) 0%, rgba(66,0,103,1) 90%);
-    background: radial-gradient(circle, rgba(155,169,255,1) 0%, rgba(66,0,103,1) 90%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#9ba9ff",endColorstr="#420067",GradientType=1);
-}
-
-/* pupil of round eye */
-.round-eye-pupil {
-    position: absolute;
-    margin: 0.75rem;
-    height: 1.5rem;
-    width: 1.5rem;
-    border-radius: 50%;
-    background-color: var(--black);
-}
-
-/* reflected light in round eye */
-.round-eye-light {
+/* reflected light in eyeball */
+.eyeball-light {
     position: absolute;
     border-radius: 50%;
     background-color: var(--white);
     opacity: 0.75;
     height: 1rem;
     width: 1rem;
-    right: 0rem;
-    top: 0rem;
+    right: 1rem;
+    top: 1rem;
+}
+
+/* iris of eyeball */
+/* radial gradient outside brown inside gray */
+/* box-shadow order: top left, top right, bottom right, bottom left */
+.eyeball-iris {
+    position: absolute;
+    margin: 1rem;
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    background-color: var(--iris-color);
+    background: -moz-radial-gradient(circle, var(--iris-gradient) 0%, var(--iris-color) 75%);
+    background: -webkit-radial-gradient(circle, var(--iris-gradient) 0%, var(--iris-color) 75%);
+    background: radial-gradient(circle, var(--iris-gradient) 0%, var(--iris-color) 75%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=var(--iris-gradient),endColorstr=var(--iris-color),GradientType=1);
+    box-shadow:
+        inset 0.05rem 0.05rem 0.5rem var(--iris-shadow),
+        inset -0.05rem 0.05rem 0.5rem var(--iris-shadow),
+        inset 0.05rem -0.05rem 0.5rem var(--iris-shadow),
+        inset -0.05rem -0.05rem 0.5rem var(--iris-shadow);
+}
+
+/* pupil of eyeball */
+.eyeball-pupil {
+    position: absolute;
+    margin: 0.75rem;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    background-color: var(--black);
 }
 
 /* sclera of human eye, tilted 45deg */
@@ -253,17 +276,7 @@ main {
     position: absolute;
     background-color: var(--white);
     border-radius: 100% 0% 100% 0%;
-}
-
-/* iris of human eye */
-.human-eye-iris {
-    border-radius: 50%;
-}
-
-/* pupil of human eye */
-.human-eye-pupil {
-    border-radius: 50%;
-    background-color: var(--black);
+    overflow: hidden;
 }
 
 /* reflected light in human eye */
@@ -271,6 +284,19 @@ main {
     border-radius: 50%;
     background-color: var(--white);
     opacity: 0.5;
+}
+
+/* iris of human eye */
+.human-eye-iris {
+    border-radius: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* pupil of human eye */
+.human-eye-pupil {
+    border-radius: 50%;
+    background-color: var(--black);
 }
 
 /* HEART */
@@ -293,6 +319,7 @@ main {
     width: 4.5rem;
     margin-top: -0.625rem;
     margin-left: 0.25rem;
+    overflow: hidden;
 }
 
 /* first circle of heart */
@@ -383,6 +410,15 @@ main {
     animation-iteration-count: infinite;
 }
 
+/* eyeroll for eyeball */
+.eyeroll-eyeball {
+    animation-name: eyeroll-eyeball;
+    animation-duration: 4s;
+    animation-delay: 0s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+}
+
 /* linear rotate element 22.5deg 0.125s nonstop */
 .shake {
     animation-name: shake;
@@ -402,6 +438,16 @@ main {
 }
 
 /* KEYFRAMES */
+
+/* move iris with pupil in it up and back down */
+@keyframes eyeroll-eyeball {
+    0%, 10%, 60%, 100% {
+        margin-top: 1rem;
+    }
+    25%, 50% {
+        margin-top: -3rem;
+    }
+}
 
 /* change font-size */
 @keyframes heartbeat {

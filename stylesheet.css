@@ -28,6 +28,8 @@
     --brown: #A52A2A;
     --navy-blue: #000080;
     --cyan-blue: #008bff;
+    --med-light-cyan-blue: #40a8ff;
+    --light-cyan-blue: #90ccff;
     --light-magenta: #FFA5FF;
     --sepia: #F4ECD8;
     --light-pink-red: #FACED0;
@@ -38,10 +40,14 @@
     --egg-glow-color: var(--white);
     --egg-color: var(--light-pink-red);
     --heart-color: var(--red);
+    --eyeball-color: var(--white);
+    --eyeball-gradient: var(--light-gray);
     --eyeball-shadow: var(--darker-gray);
     --iris-color: var(--cyan-blue);
-    --iris-gradient: var(--gray);
+    --iris-gradient: var(--light-cyan-blue);
     --iris-shadow: var(--navy-blue);
+    --pupil-color: var(--black);
+    --pupil-gradient: var(--dark-gray);
 }
 
 /* light theme colors */
@@ -217,7 +223,11 @@ main {
     width: 5rem;
     border-radius: 50%;
     overflow: hidden;
-    background-color: var(--white);
+    background-color: var(--eyeball-color);
+    background: -moz-linear-gradient(225deg, var(--eyeball-color) 0%, var(--eyeball-gradient) 90%);
+    background: -webkit-linear-gradient(225deg, var(--eyeball-color) 0%, var(--eyeball-gradient) 90%);
+    background: linear-gradient(225deg, var(--eyeball-color) 0%, var(--eyeball-gradient) 90%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=var(--eyeball-color),endColorstr=var(--eyeball-gradient),GradientType=1);
     box-shadow:
         inset 0.05rem 0.05rem 0.5rem var(--eyeball-shadow),
         inset -0.05rem 0.05rem 0.5rem var(--eyeball-shadow),
@@ -226,15 +236,21 @@ main {
 }
 
 /* reflected light in eyeball */
+/* box-shadow order: top left, top right, bottom right, bottom left */
 .eyeball-light {
     position: absolute;
     border-radius: 50%;
     background-color: var(--white);
     opacity: 0.75;
-    height: 1rem;
-    width: 1rem;
-    right: 1rem;
-    top: 1rem;
+    height: 0.75rem;
+    width: 0.75rem;
+    right: 1.25rem;
+    top: 1.25rem;
+    box-shadow:
+        0.5rem 0.5rem 1rem var(--white),
+        -0.5rem 0.5rem 1rem var(--white),
+        0.5rem -0.5rem 1rem var(--white),
+        -0.5rem -0.5rem 1rem var(--white);
 }
 
 /* iris of eyeball */
@@ -247,10 +263,10 @@ main {
     width: 3rem;
     border-radius: 50%;
     background-color: var(--iris-color);
-    background: -moz-radial-gradient(circle, var(--iris-gradient) 0%, var(--iris-color) 75%);
-    background: -webkit-radial-gradient(circle, var(--iris-gradient) 0%, var(--iris-color) 75%);
-    background: radial-gradient(circle, var(--iris-gradient) 0%, var(--iris-color) 75%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=var(--iris-gradient),endColorstr=var(--iris-color),GradientType=1);
+    background: -moz-linear-gradient(225deg, var(--iris-color) 0%, var(--iris-gradient) 90%);
+    background: -webkit-linear-gradient(225deg, var(--iris-color) 0%, var(--iris-gradient) 90%);
+    background: linear-gradient(225deg, var(--iris-color) 0%, var(--iris-gradient) 90%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=var(--iris-color),endColorstr=var(--iris-gradient),GradientType=1);
     box-shadow:
         inset 0.05rem 0.05rem 0.5rem var(--iris-shadow),
         inset -0.05rem 0.05rem 0.5rem var(--iris-shadow),
@@ -265,7 +281,11 @@ main {
     height: 1.5rem;
     width: 1.5rem;
     border-radius: 50%;
-    background-color: var(--black);
+    background-color: var(--pupil-color);
+    background: -moz-linear-gradient(45deg, var(--pupil-color) 0%, var(--pupil-gradient) 90%);
+    background: -webkit-linear-gradient(45deg, var(--pupil-color) 0%, var(--pupil-gradient) 90%);
+    background: linear-gradient(45deg, var(--pupil-color) 0%, var(--pupil-gradient) 90%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=var(--pupil-color),endColorstr=var(--pupil-gradient),GradientType=1);
 }
 
 /* sclera of human eye, tilted 45deg */

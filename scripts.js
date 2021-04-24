@@ -62,7 +62,7 @@ function addHeart() {
     let heartBox = document.createElement('div');
     heartBox.classList.add('heart-box')
 
-    if (hearts < 3) {
+    if (hearts < 3 || isPrime(hearts)) {
         // make the div for the hex code heart
         let hexHeart = document.createElement('div');
         hexHeart.classList.add('hex-heart');
@@ -148,6 +148,29 @@ function addEgg() {
 
     // put the egg in the DOM 
     document.getElementById('basket').appendChild(eggDiv);
+}
+
+function isPrime(n) {
+    // check that hearts is a number and that it is not infinity
+    if (isNaN(n) || !isFinite(n)) {
+        return false;
+    }
+
+    // get whole number square root of hearts, only need to iterate up to this high
+    let sqRoot = Math.ceil(Math.sqrt(n));
+
+    // get rid of the easy cases
+    if (n % 2 === 0 || n % 3 === 0 || n % 5 === 0) {
+        return false;
+    }
+
+    // loop to find if it is a prime number, only iterate through odd numbers
+    for (let i = 7; i < sqRoot; i += 2) {
+        if (n % i === 0) {
+            return false;
+        }
+    }
+    return true;
 }
 
 function logBasket() {

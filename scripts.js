@@ -20,20 +20,20 @@ function generateEyeHeartEgg() {
     // execute function according to choice
     if (choice === 'eye') {
         eyes += 1;
-        addEye();
+        addEye(eyes);
     } else if (choice === 'heart') {
         hearts += 1;
-        addHeart();
+        addHeart(hearts);
     } else {
         eggs += 1;
-        addEgg();
+        addEgg(eggs);
     }
 
     // log to console what you've clicked onto your screen 
     logBasket(eyes, hearts, eggs);
 }
 
-function addEye() {
+function addEye(eyes) {
     // pupil for eyeball
     let eyeballPupil = document.createElement('div');
     eyeballPupil.classList.add('eyeball-pupil');
@@ -61,7 +61,7 @@ function addEye() {
     document.getElementById('basket').appendChild(eyeBox);
 }
 
-function addHeart() {
+function addHeart(hearts) {
     // square box for heart
     let heartBox = document.createElement('div');
     heartBox.classList.add('heart-box')
@@ -111,7 +111,7 @@ function addHeart() {
     document.getElementById('basket').appendChild(heartBox);
 }
 
-function addEgg() {
+function addEgg(eggs) {
     // div that contains the inner top of egg
     let eggTopInnerDiv = document.createElement('div');
     eggTopInnerDiv.classList.add('egg-top-inner');

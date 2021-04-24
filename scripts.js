@@ -1,8 +1,13 @@
-let eyes = 0;
-let hearts = 0;
-let eggs = 0;
-
 function generateEyeHeartEgg() {
+    // count number of eye divs
+    let eyes = document.getElementsByClassName('eye-box').length;
+
+    // count number of heart divs
+    let hearts = document.getElementsByClassName('heart-box').length;
+
+    // count number of egg divs
+    let eggs = document.getElementsByClassName('egg-box').length;
+
     // get the viewport-sized form 
     const form = document.forms.choiceform;
 
@@ -14,25 +19,21 @@ function generateEyeHeartEgg() {
 
     // execute function according to choice
     if (choice === 'eye') {
+        eyes += 1;
         addEye();
     } else if (choice === 'heart') {
+        hearts += 1;
         addHeart();
     } else {
+        eggs += 1;
         addEgg();
     }
 
     // log to console what you've clicked onto your screen 
-    logBasket();
+    logBasket(eyes, hearts, eggs);
 }
 
 function addEye() {
-    // check that eyes is a number 
-    if (isNaN(eyes)) {
-        eyes = document.getElementsByClassName('eye-box').length
-    }
-
-    eyes++;
-
     // pupil for eyeball
     let eyeballPupil = document.createElement('div');
     eyeballPupil.classList.add('eyeball-pupil');
@@ -61,13 +62,6 @@ function addEye() {
 }
 
 function addHeart() {
-    // check that hearts is a number 
-    if (isNaN(hearts)) {
-        hearts = document.getElementsByClassName('heart-box').length
-    }
-
-    hearts++;
-
     // square box for heart
     let heartBox = document.createElement('div');
     heartBox.classList.add('heart-box')
@@ -118,13 +112,6 @@ function addHeart() {
 }
 
 function addEgg() {
-    // check that eggs is a number 
-    if (isNaN(eggs)) {
-        eggs = document.getElementsByClassName('egg-box').length
-    }
-
-    eggs++;
-
     // div that contains the inner top of egg
     let eggTopInnerDiv = document.createElement('div');
     eggTopInnerDiv.classList.add('egg-top-inner');
@@ -188,7 +175,7 @@ function isPrime(n) {
     return true;
 }
 
-function logBasket() {
+function logBasket(eyes, hearts, eggs) {
     let basketContents = 'you have ';
 
     if (eyes === 0 && hearts === 0 && eggs === 0) {

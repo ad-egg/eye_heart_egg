@@ -138,7 +138,7 @@ function addEgg() {
 
     // check if the egg is a power of 2 
     // or if it's egg number 42 
-    if (Math.log2(eggs) % 1 === 0) {
+    if (eggs === 42 || Math.log2(eggs) % 1 === 0) {
         eggDiv.classList.add('shake');
     }
 

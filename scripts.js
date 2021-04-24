@@ -26,6 +26,11 @@ function generateEyeHeartEgg() {
 }
 
 function addEye() {
+    // check that eyes is a number 
+    if (isNaN(eyes)) {
+        eyes = document.getElementsByClassName('eye-box').length
+    }
+
     eyes++;
 
     // pupil for eyeball
@@ -56,6 +61,11 @@ function addEye() {
 }
 
 function addHeart() {
+    // check that hearts is a number 
+    if (isNaN(hearts)) {
+        hearts = document.getElementsByClassName('heart-box').length
+    }
+
     hearts++;
 
     // square box for heart
@@ -108,6 +118,11 @@ function addHeart() {
 }
 
 function addEgg() {
+    // check that eggs is a number 
+    if (isNaN(eggs)) {
+        eggs = document.getElementsByClassName('egg-box').length
+    }
+
     eggs++;
 
     // div that contains the inner top of egg

@@ -24,6 +24,7 @@
     --blue: #0000FF;
     --indigo: #A500FF;
     --purple: #FF00FF;
+    --pink: #FFC0CB;
     --deep-maroon: #820000;
     --maroon: #800000;
     --brown: #A52A2A;
@@ -36,6 +37,7 @@
     --light-magenta: #FFA5FF;
     --sepia: #F4ECD8;
     --light-pink-red: #FACED0;
+    --dark-pink: #FF6781;
 
     /* dark theme default colors */
     --background-color: var(--dark-gray);
@@ -51,6 +53,7 @@
     --iris-shadow: var(--navy-blue);
     --pupil-color: var(--black);
     --pupil-gradient: var(--dark-gray);
+    --hex-heart-glow: var(--dark-pink);
 }
 
 /* light theme colors */
@@ -373,6 +376,20 @@ main {
     bottom: 0rem;
 }
 
+/* heart using hex code */
+.hex-heart {
+    color: var(--heart-color);
+    font-size: 4rem;
+    text-shadow: 0rem 0rem 1rem var(--hex-heart-glow);
+}
+
+/* ascii heart */
+.ascii-heart::before {
+    content: '\2764';
+    color: var(--heart-color);
+    font-size: 5rem;
+}
+
 /* the CSS heart from tutorial */
 /* the tilted square for bottom of heart */
 .tutorial-heart {
@@ -403,19 +420,6 @@ main {
 .tutorial-heart::after {
     top: -1.5rem;
     left: 0;
-}
-
-/* ascii heart */
-.ascii-heart::before {
-    content: '\2764';
-    color: var(--heart-color);
-    font-size: 5rem;
-}
-
-/* heart using hex code */
-.hex-heart {
-    color: var(--heart-color);
-    font-size: 4rem;
 }
 
 /* ANIMATIONS */

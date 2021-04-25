@@ -45,8 +45,8 @@
     --egg-glow-color: var(--white);
     --egg-color: var(--light-pink-red);
     --heart-color: var(--red);
-    --eyeball-color: var(--white);
-    --eyeball-gradient: var(--light-gray);
+    --sclera-color: var(--lighter-gray);
+    --sclera-gradient: var(--light-gray);
     --eyeball-shadow: var(--deep-maroon);
     --iris-color: var(--blue);
     --iris-gradient: var(--cyan-blue);
@@ -228,11 +228,11 @@ main {
     width: 5rem;
     border-radius: 50%;
     overflow: hidden;
-    background-color: var(--eyeball-color);
-    background: -moz-linear-gradient(225deg, var(--eyeball-color) 0%, var(--eyeball-gradient) 90%);
-    background: -webkit-linear-gradient(225deg, var(--eyeball-color) 0%, var(--eyeball-gradient) 90%);
-    background: linear-gradient(225deg, var(--eyeball-color) 0%, var(--eyeball-gradient) 90%);
-    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=var(--eyeball-color),endColorstr=var(--eyeball-gradient),GradientType=1);
+    background-color: var(--sclera-color);
+    background: -moz-linear-gradient(225deg, var(--sclera-color) 0%, var(--sclera-gradient) 90%);
+    background: -webkit-linear-gradient(225deg, var(--sclera-color) 0%, var(--sclera-gradient) 90%);
+    background: linear-gradient(225deg, var(--sclera-color) 0%, var(--sclera-gradient) 90%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=var(--sclera-color),endColorstr=var(--sclera-gradient),GradientType=1);
 }
 
 /* eyeball shadow */
@@ -304,11 +304,13 @@ main {
     width: 3.5rem;
     transform: rotate(45deg);
     position: absolute;
-    background-color: var(--eyeball-color);
+    background-color: var(--sclera-color);
     border-radius: 100% 0% 100% 0%;
     overflow: hidden;
     margin-left: 0.75rem;
     margin-top: 0.75rem;
+    border-top: 0.125rem solid var(--green);
+    border-left: 0.125rem solid var(--purple);
 }
 
 /* reflected light in human eye */

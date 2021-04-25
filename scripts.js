@@ -52,10 +52,22 @@ function addEye(eyes) {
     // put iris in eyeball
     eyeball.appendChild(eyeballIris);
 
+    // shadow for eyeball
+    let eyeballShadow = document.createElement('div');
+    eyeballShadow.classList.add('eyeball-shadow');
+
+    // light for eyeball
+    let eyeballLight = document.createElement('div');
+    eyeballLight.classList.add('eyeball-light');
+
+    // put eyeball light in eyeball shadow div
+    eyeballShadow.appendChild(eyeballLight);
+
     // container div for eyeball
     let eyeBox = document.createElement('div');
     eyeBox.classList.add('eye-box');
     eyeBox.appendChild(eyeball);
+    eyeBox.appendChild(eyeballShadow);
 
     // put the eyeball in the DOM
     document.getElementById('basket').appendChild(eyeBox);

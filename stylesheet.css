@@ -304,9 +304,11 @@ main {
     width: 3.5rem;
     transform: rotate(45deg);
     position: absolute;
-    background-color: var(--white);
+    background-color: var(--eyeball-color);
     border-radius: 100% 0% 100% 0%;
     overflow: hidden;
+    margin-left: 0.75rem;
+    margin-top: 0.75rem;
 }
 
 /* reflected light in human eye */

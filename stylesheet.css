@@ -255,15 +255,14 @@ main {
     border-radius: 50%;
     background-color: var(--white);
     opacity: 0.75;
-    height: 0.5rem;
-    width: 0.5rem;
-    right: 1.5rem;
-    top: 1.5rem;
+    height: 10%;
+    width: 10%;
+    right: 30%;
+    top: 30%;
     box-shadow: 0rem 0rem 0.125rem 0.125rem var(--white);
 }
 
 /* iris of eyeball */
-/* radial gradient outside brown inside gray */
 /* box-shadow order: top left, top right, bottom right, bottom left */
 .eyeball-iris {
     position: absolute;
@@ -304,30 +303,43 @@ main {
     width: 3.5rem;
     transform: rotate(45deg);
     position: absolute;
-    background-color: var(--sclera-color);
     border-radius: 100% 0% 100% 0%;
     overflow: hidden;
-    margin: 0.75rem;   
+    margin: 0.75rem;
+    background-color: var(--sclera-color);
+    background: -moz-linear-gradient(180deg, var(--sclera-color) 0%, var(--sclera-gradient) 75%);
+    background: -webkit-linear-gradient(180deg, var(--sclera-color) 0%, var(--sclera-gradient) 75%);
+    background: linear-gradient(180deg, var(--sclera-color) 0%, var(--sclera-gradient) 75%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=var(--sclera-color),endColorstr=var(--sclera-gradient),GradientType=1);
+}
+
+/* box shadow for human eye, tilted 45deg */
+.human-eye-shadow {
+    height: 3.5rem;
+    width: 3.5rem;
+    transform: rotate(45deg);
+    position: absolute;
+    border-radius: 100% 0% 100% 0%;
+    overflow: hidden;
+    margin: 0.75rem;
+    background-color: transparent;
+    opacity: 0.75;
+    box-shadow:
+        inset 0rem 0rem 0.5rem var(--eyeball-shadow),
+        0rem 0rem 0.5rem 0.0625rem var(--eyeball-shadow);
 }
 
 /* reflected light in human eye */
 .human-eye-light {
+    position: absolute;
     border-radius: 50%;
+    width: 10%;
+    height: 10%;
     background-color: var(--white);
-    opacity: 0.5;
-}
-
-/* iris of human eye */
-.human-eye-iris {
-    border-radius: 50%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* pupil of human eye */
-.human-eye-pupil {
-    border-radius: 50%;
-    background-color: var(--black);
+    opacity: 0.75;
+    top: 25%;
+    left: 45%;
+    box-shadow: 0rem 0rem 0.065rem 0.065rem var(--white);
 }
 
 /* HEART */

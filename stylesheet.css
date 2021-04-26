@@ -462,6 +462,15 @@ main {
     animation-iteration-count: infinite;
 }
 
+/* eyeroll for human eye */
+.eyeroll-human-eye {
+    animation-name: eyeroll-human-eye;
+    animation-duration: 4s;
+    animation-delay: 0s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+}
+
 /* linear rotate element 22.5deg 0.125s nonstop */
 .shake {
     animation-name: shake;
@@ -482,13 +491,23 @@ main {
 
 /* KEYFRAMES */
 
-/* move iris with pupil in it up and back down */
+/* move iris with pupil in it up and back down by change margin-top */
 @keyframes eyeroll-eyeball {
     0%, 10%, 60%, 100% {
         margin-top: 25%;
     }
     25%, 50% {
         margin-top: -50%;
+    }
+}
+
+/* move iris with pupil in it up and back down by translate x and y */
+@keyframes eyeroll-human-eye {
+    0%, 10%, 60%, 100% {
+        transform: translate(0%, 0%);
+    }
+    25%, 50% {
+        transform: translate(-100%, -100%);
     }
 }
 

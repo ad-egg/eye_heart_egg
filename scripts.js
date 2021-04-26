@@ -128,16 +128,25 @@ function addEgg(eggs) {
     let eggTopInnerDiv = document.createElement('div');
     eggTopInnerDiv.classList.add('egg-top-inner');
 
+    // div for top of egg box-shadow
+    let eggTopShadow = document.createElement('div');
+    eggTopShadow.classList.add('egg-top-shadow')
+
     // div that contains the divs that make up top half of egg 
     let eggTopOuterDiv = document.createElement('div');
     eggTopOuterDiv.classList.add('egg-top-outer');
     
     // assemble top of egg
     eggTopOuterDiv.appendChild(eggTopInnerDiv);
+    eggTopOuterDiv.appendChild(eggTopShadow);
 
     // div that contains inner bottom of egg
     let eggBottomInnerDiv = document.createElement('div');
     eggBottomInnerDiv.classList.add('egg-bottom-inner');
+
+    // div for bottom of egg box-shadow
+    let eggBottomShadow = document.createElement('div');
+    eggBottomShadow.classList.add('egg-bottom-shadow');
 
     // div that contains the divs that make up bottom half of egg 
     let eggBottomOuterDiv = document.createElement('div');
@@ -145,6 +154,7 @@ function addEgg(eggs) {
 
     // assemble bottom of egg
     eggBottomOuterDiv.appendChild(eggBottomInnerDiv);
+    eggBottomOuterDiv.appendChild(eggBottomShadow);
 
     // div that contains all the divs that make up the egg 
     let eggDiv = document.createElement('div');

@@ -307,10 +307,7 @@ main {
     background-color: var(--sclera-color);
     border-radius: 100% 0% 100% 0%;
     overflow: hidden;
-    margin-left: 0.75rem;
-    margin-top: 0.75rem;
-    border-top: 0.125rem solid var(--green);
-    border-left: 0.125rem solid var(--purple);
+    margin: 0.75rem;   
 }
 
 /* reflected light in human eye */
@@ -351,8 +348,7 @@ main {
     position: absolute;
     height: 4.5rem;
     width: 4.5rem;
-    margin-top: -0.625rem;
-    margin-left: 0.25rem;
+    margin: -0.625rem 0.25rem 0.25rem 0.25rem;
     overflow: hidden;
 }
 

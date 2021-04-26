@@ -382,7 +382,7 @@ main {
 
 /* EGG */
 
-/* egg div styling */
+/* container div for egg */
 .egg-box {
     background: none;
     border: none;
@@ -394,6 +394,9 @@ main {
     flex-direction: column;
     z-index: -1;
 }
+
+/* egg div styling */
+.egg {}
 
 /* outer div of top of egg */
 .egg-top-outer {
@@ -465,8 +468,18 @@ main {
     z-index: -1;
 }
 
+/* div for egg */
+.easter-egg {
+    width: 4rem;
+    height: 5rem;
+    position: absolute;
+    margin: 0rem 0.5rem 0rem 0.5rem;
+    background-color: pink;
+}
+
 /* outer div of top of egg */
 .easter-egg-top-outer {
+    position: absolute;
     top: 0%;
     width: 4rem;
     height: 3rem;
@@ -478,6 +491,7 @@ main {
 
 /* outer div of bottom of egg */
 .easter-egg-bottom-outer {
+    position: absolute;
     bottom: 0%;
     width: 4rem;
     height: 2rem;
@@ -489,6 +503,8 @@ main {
 
 /* inner div of top of egg */
 .easter-egg-top-inner {
+    position: absolute;
+    top: 0%;
     width: 4rem;
     height: 6rem;
     border-radius: 50%;
@@ -500,12 +516,12 @@ main {
 
 /* inner div of bottom of egg */
 .easter-egg-bottom-inner {
+    position: absolute;
+    bottom: 0%;
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
     background-color: purple;
-    position: absolute;
-    bottom: 0%;
 }
 
 /* div for box-shadow of bottomo f egg */

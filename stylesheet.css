@@ -16,6 +16,7 @@
     --ivory: #FFFFF0;
     --cream: #FFFDD0;
     --beige: #F5F5DC;
+
     --red: #FF0000;
     --orange: #FFA500;
     --yellow: #FFFF00;
@@ -25,15 +26,19 @@
     --indigo: #A500FF;
     --purple: #FF00FF;
     --pink: #FFC0CB;
+
     --deep-maroon: #820000;
     --maroon: #800000;
     --brown: #A52A2A;
+    --brownish-red: #B41B1B;
     --dark-red: #A30000;
+    --light-brown: #CC3737;
     --med-dark-red: #CC0000;
+    --med-light-red: #D96B6B;
     --navy-blue: #000080;
-    --cyan-blue: #008bff;
-    --med-light-cyan-blue: #40a8ff;
-    --light-cyan-blue: #90ccff;
+    --cyan-blue: #008BFF;
+    --med-light-cyan-blue: #40A8FF;
+    --light-cyan-blue: #90CCFF;
     --light-magenta: #FFA5FF;
     --sepia: #F4ECD8;
     --light-pink-red: #FACED0;
@@ -42,8 +47,8 @@
     /* dark theme default colors */
     --background-color: var(--dark-gray);
     --color: var(--lighter-gray);
-    --egg-glow-color: var(--white);
-    --egg-color: var(--light-pink-red);
+    --egg-color: var(--white);
+    --egg-shadow: var(--med-light-red);
     --heart-color: var(--red);
     --sclera-color: var(--lighter-gray);
     --sclera-gradient: var(--light-gray);
@@ -60,8 +65,8 @@
 [data-theme="daytime"] {
     --background-color: var(--med-gray);
     --color: var(--near-black);
-    --egg-glow-color: var(--white);
-    --egg-color: #00FF00;
+    --egg-color: var(--white);
+    --egg-shadow: #00FF00;
     --heart-color: #FF0000;
 }
 
@@ -390,16 +395,21 @@ main {
     width: 5rem;
     height: 5rem;
     margin: 0.5rem;
-    display: flex;
-    flex-direction: column;
     z-index: -1;
 }
 
 /* egg div styling */
-.egg {}
+.egg {
+    width: 4rem;
+    height: 5rem;
+    position: absolute;
+    margin: 0rem 0.5rem 0rem 0.5rem;
+}
 
 /* outer div of top of egg */
 .egg-top-outer {
+    position: absolute;
+    top: 0%;
     width: 4rem;
     height: 3rem;
     margin-left: auto;
@@ -409,6 +419,8 @@ main {
 
 /* outer div of bottom of egg */
 .egg-bottom-outer {
+    position: absolute;
+    bottom: 0%;
     width: 4rem;
     height: 2rem;
     margin-left: auto;
@@ -419,89 +431,58 @@ main {
 /* inner div of top of egg */
 /* box-shadow order: top left, top right, bottom right, bottom left */
 .egg-top-inner {
+    position: absolute;
+    top: 0%;
     width: 4rem;
     height: 6rem;
     border-radius: 50%;
-    background-color: var(--egg-glow-color);
-    box-shadow:
-        inset 0.5rem 0.5rem 1rem var(--egg-color),
-        inset -0.5rem 0.5rem 1rem var(--egg-color),
-        inset 0.5rem -0.5rem 1rem var(--egg-color),
-        inset -0.5rem -0.5rem 1rem var(--egg-color);
+    background-color: var(--egg-color);
 }
 
 /* div for box-shadow of top of egg */
-.egg-top-shadow {}
+.egg-top-shadow {
+    position: absolute;
+    top: 0%;
+    width: 4rem;
+    height: 6rem;
+    border-radius: 50%;
+    background-color: transparent;
+    opacity: 0.5;
+    box-shadow:
+        inset 0.5rem 0.5rem 1rem var(--egg-shadow),
+        inset -0.5rem 0.5rem 1rem var(--egg-shadow),
+        inset 0.5rem -0.5rem 1rem var(--egg-shadow),
+        inset -0.5rem -0.5rem 1rem var(--egg-shadow);
+}
 
 /* inner div of bottom of egg */
 /* box-shadow order: top left, top right, bottom right, bottom left */
 .egg-bottom-inner {
-    width: 4rem;
-    height: 4rem;
-    border-radius: 50%;
-    background-color: var(--egg-glow-color);
-    margin-top: -2rem;
-    box-shadow:
-        inset 0.5rem 0.5rem 1rem var(--egg-color),
-        inset -0.5rem 0.5rem 1rem var(--egg-color),
-        inset 0.5rem -0.5rem 1rem var(--egg-color),
-        inset -0.5rem -0.5rem 1rem var(--egg-color);
-}
-
-/* div for box-shadow of bottom of egg */
-.egg-bottom-shadow {}
-
-
-
-
-
-
-
-/* egg div styling */
-.easter-egg-box {
-    background: green;
-    border: none;
-    box-shadow: none;
-    width: 5rem;
-    height: 5rem;
-    margin: 0.5rem;
-    z-index: -1;
-}
-
-/* div for egg */
-.easter-egg {
-    width: 4rem;
-    height: 5rem;
-    position: absolute;
-    margin: 0rem 0.5rem 0rem 0.5rem;
-    background-color: pink;
-}
-
-/* outer div of top of egg */
-.easter-egg-top-outer {
-    position: absolute;
-    top: 0%;
-    width: 4rem;
-    height: 3rem;
-    margin-left: auto;
-    margin-right: auto;
-    overflow: hidden;
-    background-color: red;
-}
-
-/* outer div of bottom of egg */
-.easter-egg-bottom-outer {
     position: absolute;
     bottom: 0%;
     width: 4rem;
-    height: 2rem;
-    margin-left: auto;
-    margin-right: auto;
-    overflow: hidden;
-    background-color: orange;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: var(--egg-color);
 }
 
-/* inner div of top of egg */
+/* div for box-shadow of bottom of egg */
+.egg-bottom-shadow {
+    position: absolute;
+    bottom: 0%;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    opacity: 0.5;
+    background-color: transparent;
+    box-shadow:
+        inset 0.5rem 0.5rem 1rem var(--egg-shadow),
+        inset -0.5rem 0.5rem 1rem var(--egg-shadow),
+        inset 0.5rem -0.5rem 1rem var(--egg-shadow),
+        inset -0.5rem -0.5rem 1rem var(--egg-shadow);
+}
+
+/* inner div of top of easter egg */
 .easter-egg-top-inner {
     position: absolute;
     top: 0%;
@@ -511,10 +492,7 @@ main {
     background-color: blue;
 }
 
-/* div for box-shadow of top of egg */
-.easter-egg-top-shadow {}
-
-/* inner div of bottom of egg */
+/* inner div of bottom of easter egg */
 .easter-egg-bottom-inner {
     position: absolute;
     bottom: 0%;
@@ -523,13 +501,6 @@ main {
     border-radius: 50%;
     background-color: purple;
 }
-
-/* div for box-shadow of bottomo f egg */
-.easter-egg-bottom-shadow {}
-
-
-
-
 
 /* ANIMATIONS */
 

@@ -156,9 +156,9 @@ function addEgg(eggs) {
     eggBottomOuterDiv.appendChild(eggBottomInnerDiv);
     eggBottomOuterDiv.appendChild(eggBottomShadow);
 
-    // div that contains all the divs that make up the egg 
+    // div that contains the divs that make up the egg 
     let eggDiv = document.createElement('div');
-    eggDiv.classList.add('egg-box');
+    eggDiv.classList.add('egg');
 
     // check if the egg is a power of 2 
     // or if it's egg number 42 
@@ -170,8 +170,13 @@ function addEgg(eggs) {
     eggDiv.appendChild(eggTopOuterDiv);
     eggDiv.appendChild(eggBottomOuterDiv);
 
+    // container div for egg
+    let eggBoxDiv = document.createElement('div');
+    eggBoxDiv.classList.add('egg-box');
+    eggBoxDiv.appendChild(eggDiv);
+
     // put the egg in the DOM 
-    document.getElementById('basket').appendChild(eggDiv);
+    document.getElementById('basket').appendChild(eggBoxDiv);
 }
 
 function isPrime(n) {

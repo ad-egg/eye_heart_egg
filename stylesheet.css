@@ -23,7 +23,9 @@
     --coral: #FF7F50;
     --orange: #FFA500;
     --yellow: #FFFF00;
-    --green: #00FF00;
+    --lime: #00FF00;
+    --green: #008000;
+    --emerald: #50C878;
     --cyan: #00FFFF;
     --baby-blue: #89CFF0;
     --sky-blue: #87CEEB;
@@ -517,6 +519,14 @@ main {
     background: -webkit-radial-gradient(circle, var(--easter-egg-color) 0%, var(--easter-egg-gradient) 75%);
     background: radial-gradient(circle, var(--easter-egg-color) 0%, var(--easter-egg-gradient) 75%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=var(--easter-egg-color),endColorstr=var(--easter-egg-gradient),GradientType=1);
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            var(--hot-pink),
+            var(--hot-pink) 0.5rem,
+            var(--sky-blue) 0.5rem,
+            var(--sky-blue) 1rem
+        );
 }
 
 /* inner div of bottom of easter egg */
@@ -531,6 +541,14 @@ main {
     background: -webkit-radial-gradient(circle, var(--easter-egg-color) 0%, var(--easter-egg-gradient) 75%);
     background: radial-gradient(circle, var(--easter-egg-color) 0%, var(--easter-egg-gradient) 75%);
     filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=var(--easter-egg-color),endColorstr=var(--easter-egg-gradient),GradientType=1);
+    background: 
+    repeating-linear-gradient(
+        0deg,
+        var(--hot-pink),
+        var(--hot-pink) 0.5rem,
+        var(--sky-blue) 0.5rem,
+        var(--sky-blue) 1rem
+    );
 }
 
 /* ANIMATIONS */

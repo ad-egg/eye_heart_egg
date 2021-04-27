@@ -35,6 +35,8 @@
     --light-brown: #CC3737;
     --med-dark-red: #CC0000;
     --med-light-red: #D96B6B;
+    --med-light-yellow: #D8C894;
+    --eggshell: #F0EAD6;
     --navy-blue: #000080;
     --cyan-blue: #008BFF;
     --med-light-cyan-blue: #40A8FF;
@@ -47,7 +49,8 @@
     /* dark theme default colors */
     --background-color: var(--dark-gray);
     --color: var(--lighter-gray);
-    --egg-color: var(--white);
+    --egg-color: var(--eggshell);
+    --egg-gradient: var(--med-light-yellow);
     --egg-shadow: var(--med-light-red);
     --heart-color: var(--red);
     --sclera-color: var(--lighter-gray);
@@ -429,7 +432,6 @@ main {
 }
 
 /* inner div of top of egg */
-/* box-shadow order: top left, top right, bottom right, bottom left */
 .egg-top-inner {
     position: absolute;
     top: 0%;
@@ -437,9 +439,14 @@ main {
     height: 6rem;
     border-radius: 50%;
     background-color: var(--egg-color);
+    background: -moz-radial-gradient(circle, var(--egg-color) 0%, var(--egg-gradient) 75%);
+    background: -webkit-radial-gradient(circle, var(--egg-color) 0%, var(--egg-gradient) 75%);
+    background: radial-gradient(circle, var(--egg-color) 0%, var(--egg-gradient) 75%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=var(--egg-color),endColorstr=var(--egg-gradient),GradientType=1);
 }
 
 /* div for box-shadow of top of egg */
+/* box-shadow order: top left, top right, bottom right, bottom left */
 .egg-top-shadow {
     position: absolute;
     top: 0%;
@@ -456,7 +463,6 @@ main {
 }
 
 /* inner div of bottom of egg */
-/* box-shadow order: top left, top right, bottom right, bottom left */
 .egg-bottom-inner {
     position: absolute;
     bottom: 0%;
@@ -464,9 +470,14 @@ main {
     height: 4rem;
     border-radius: 50%;
     background-color: var(--egg-color);
+    background: -moz-radial-gradient(circle, var(--egg-color) 0%, var(--egg-gradient) 75%);
+    background: -webkit-radial-gradient(circle, var(--egg-color) 0%, var(--egg-gradient) 75%);
+    background: radial-gradient(circle, var(--egg-color) 0%, var(--egg-gradient) 75%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=var(--egg-color),endColorstr=var(--egg-gradient),GradientType=1);
 }
 
 /* div for box-shadow of bottom of egg */
+/* box-shadow order: top left, top right, bottom right, bottom left */
 .egg-bottom-shadow {
     position: absolute;
     bottom: 0%;

@@ -12,32 +12,42 @@
     --light-gray: #BBBBBB;
     --lighter-gray: #DDDDDD;
     --lightest-gray: #EEEEEE; 
+
     --white: #FFFFFF;
     --ivory: #FFFFF0;
     --cream: #FFFDD0;
     --beige: #F5F5DC;
+    --eggshell: #F0EAD6;
 
     --red: #FF0000;
+    --coral: #FF7F50;
     --orange: #FFA500;
     --yellow: #FFFF00;
     --green: #00FF00;
     --cyan: #00FFFF;
+    --baby-blue: #89CFF0;
+    --sky-blue: #87CEEB;
+    --navy-blue: #000080;
     --blue: #0000FF;
-    --indigo: #A500FF;
-    --purple: #FF00FF;
+    --indigo: #4B0082;
+    --violet: #A500FF;
+    --purple: #800080;
+    --magenta: #FF00FF;
     --pink: #FFC0CB;
-
-    --deep-maroon: #820000;
+    --hot-pink: #FF69B4;
+    --cotton-candy: #FFBCD9;
+    --light-coral: #F08080;
+    --salmon: #FA8072;
     --maroon: #800000;
     --brown: #A52A2A;
+
+    --deep-maroon: #820000;
     --brownish-red: #B41B1B;
     --dark-red: #A30000;
     --light-brown: #CC3737;
     --med-dark-red: #CC0000;
     --med-light-red: #D96B6B;
     --med-light-yellow: #D8C894;
-    --eggshell: #F0EAD6;
-    --navy-blue: #000080;
     --cyan-blue: #008BFF;
     --med-light-cyan-blue: #40A8FF;
     --light-cyan-blue: #90CCFF;
@@ -52,6 +62,8 @@
     --egg-color: var(--eggshell);
     --egg-gradient: var(--med-light-yellow);
     --egg-shadow: var(--med-light-red);
+    --easter-egg-color: var(--pink);
+    --easter-egg-gradient: var(--hot-pink);
     --heart-color: var(--red);
     --sclera-color: var(--lighter-gray);
     --sclera-gradient: var(--light-gray);
@@ -500,7 +512,11 @@ main {
     width: 4rem;
     height: 6rem;
     border-radius: 50%;
-    background-color: blue;
+    background-color: var(--easter-egg-color);
+    background: -moz-radial-gradient(circle, var(--easter-egg-color) 0%, var(--easter-egg-gradient) 75%);
+    background: -webkit-radial-gradient(circle, var(--easter-egg-color) 0%, var(--easter-egg-gradient) 75%);
+    background: radial-gradient(circle, var(--easter-egg-color) 0%, var(--easter-egg-gradient) 75%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=var(--easter-egg-color),endColorstr=var(--easter-egg-gradient),GradientType=1);
 }
 
 /* inner div of bottom of easter egg */
@@ -510,7 +526,11 @@ main {
     width: 4rem;
     height: 4rem;
     border-radius: 50%;
-    background-color: purple;
+    background-color: var(--easter-egg-color);
+    background: -moz-radial-gradient(circle, var(--easter-egg-color) 0%, var(--easter-egg-gradient) 75%);
+    background: -webkit-radial-gradient(circle, var(--easter-egg-color) 0%, var(--easter-egg-gradient) 75%);
+    background: radial-gradient(circle, var(--easter-egg-color) 0%, var(--easter-egg-gradient) 75%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=var(--easter-egg-color),endColorstr=var(--easter-egg-gradient),GradientType=1);
 }
 
 /* ANIMATIONS */

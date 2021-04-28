@@ -511,6 +511,7 @@ main {
 }
 
 /* inner div of top of easter egg */
+/* repeating horizontal stripes background */
 .easter-egg-top-inner {
     position: absolute;
     top: 0%;
@@ -532,7 +533,24 @@ main {
         );
 }
 
+/* inner div of top of easter egg */
+/* repeating polka dots on transparent background */
+.easter-egg-top-inner::after {
+    position: absolute;
+    top: 0%;
+    width: 4rem;
+    height: 6rem;
+    border-radius: 50%;
+    background-color: transparent;
+    background-image: 
+        radial-gradient(#212121 20%, transparent 20%),
+        radial-gradient(#fafafa 20%, transparent 20%);
+    background-position: 0 0, 1rem 1rem;
+    background-size: 1rem 1rem;
+}
+
 /* inner div of bottom of easter egg */
+/* repeating horizontal stripes background */
 .easter-egg-bottom-inner {
     position: absolute;
     bottom: 0%;

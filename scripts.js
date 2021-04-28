@@ -126,7 +126,17 @@ function addHeart(hearts) {
 function addEgg(eggs) {
     // div that contains the inner top of egg
     let eggTopInnerDiv = document.createElement('div');
-    eggTopInnerDiv.classList.add('egg-top-inner');
+    
+    // div that contains inner bottom of egg
+    let eggBottomInnerDiv = document.createElement('div');
+
+    if (eggs === 42) {
+        eggTopInnerDiv.classList.add('easter-egg-top-inner');    
+        eggBottomInnerDiv.classList.add('easter-egg-bottom-inner');
+    } else {
+        eggTopInnerDiv.classList.add('egg-top-inner');
+        eggBottomInnerDiv.classList.add('egg-bottom-inner');
+    }
 
     // div for top of egg box-shadow
     let eggTopShadow = document.createElement('div');
@@ -139,10 +149,6 @@ function addEgg(eggs) {
     // assemble top of egg
     eggTopOuterDiv.appendChild(eggTopInnerDiv);
     eggTopOuterDiv.appendChild(eggTopShadow);
-
-    // div that contains inner bottom of egg
-    let eggBottomInnerDiv = document.createElement('div');
-    eggBottomInnerDiv.classList.add('egg-bottom-inner');
 
     // div for bottom of egg box-shadow
     let eggBottomShadow = document.createElement('div');
@@ -161,8 +167,7 @@ function addEgg(eggs) {
     eggDiv.classList.add('egg');
 
     // check if the egg is a power of 2 
-    // or if it's egg number 42 
-    if (eggs === 42 || Math.log2(eggs) % 1 === 0) {
+    if (Math.log2(eggs) % 1 === 0) {
         eggDiv.classList.add('shake');
     }
 

@@ -61,6 +61,7 @@
     /* dark theme default colors */
     --background-color: var(--dark-gray);
     --color: var(--lighter-gray);
+    --label-highlight: var(--indigo);
     --egg-color: var(--eggshell);
     --egg-gradient: var(--med-light-yellow);
     --egg-shadow: var(--med-light-red);
@@ -144,8 +145,10 @@ main {
     margin: 0rem;
 }
 
-/* style the radio input labels */
-#choices-radio label {}
+/* style the radio input labels when radio button is checked */
+#choices-radio input[type="radio"]:checked + label {
+    background-color: var(--label-highlight);
+}
 
 /* styling for full-screen button */
 #click-for-eye-heart-egg {

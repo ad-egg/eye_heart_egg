@@ -534,6 +534,26 @@ main {
 }
 
 /* inner div of top of easter egg */
+/* zigzag pattern on transparent background */
+.easter-egg-top-inner:before {
+    content: '';
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    width: 4rem;
+    height: 6rem;
+    border-radius: 50%;
+    background-color: transparent;
+    background-image:
+        linear-gradient(45deg, var(--lime) 25%, transparent 25%),
+        linear-gradient(135deg, var(--red) 25%, transparent 25%),
+        linear-gradient(225deg, var(--lime) 25%, transparent 25%),
+        linear-gradient(315deg, var(--red) 25%, transparent 25%);
+    background-position: 0rem 0rem, 0.5rem 0.5rem;
+    background-size: 1rem 1rem;
+}
+
+/* inner div of top of easter egg */
 /* repeating polka dots on transparent background */
 .easter-egg-top-inner:after {
     content: '';
@@ -572,6 +592,19 @@ main {
         var(--cyan) 0.5rem,
         var(--cyan) 1rem
     );
+}
+
+/* inner div of bottom of easter egg */
+/* repeating polka dots on transparent background */
+.easter-egg-bottom-inner:before {
+    content: '';
+    position: absolute;
+    left: 0%;
+    bottom: 0%;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    background-color: transparent;
 }
 
 /* inner div of bottom of easter egg */
@@ -701,4 +734,16 @@ main {
     75% {
         background-color: var(--orange);
     }
+}
+
+.zig-zag { 
+    background:
+        linear-gradient(135deg, var(--yellow) 25%, transparent 25%) -50px 0,
+        linear-gradient(225deg, var(--yellow) 25%, transparent 25%) -50px 0,
+        linear-gradient(315deg, var(--yellow) 25%, transparent 25%),
+        linear-gradient(45deg, var(--yellow) 25%, transparent 25%);
+    background-size: 100px 100px;
+    background-color: transparent;
+    height: 200px;
+    width: 200px;
 }

@@ -528,13 +528,14 @@ main {
             0deg,
             var(--hot-pink),
             var(--hot-pink) 0.5rem,
-            var(--cyan) 0.5rem,
-            var(--cyan) 1rem
+            var(--yellow) 0.5rem,
+            var(--yellow) 1rem
         );
 }
 
 /* inner div of top of easter egg */
-/* zigzag pattern on transparent background */
+/* repeating rhombus pattern */
+/* 315deg top left triangle, 225deg bottom left triangle, 45deg top right triangle, 135deg bottom right triangle */
 .easter-egg-top-inner:before {
     content: '';
     position: absolute;
@@ -545,12 +546,12 @@ main {
     border-radius: 50%;
     background-color: transparent;
     background-image:
-        linear-gradient(45deg, var(--lime) 25%, transparent 25%),
-        linear-gradient(135deg, var(--red) 25%, transparent 25%),
+        linear-gradient(315deg, var(--lime) 25%, transparent 25%),
         linear-gradient(225deg, var(--lime) 25%, transparent 25%),
-        linear-gradient(315deg, var(--red) 25%, transparent 25%);
-    background-position: 0rem 0rem, 0.5rem 0.5rem;
-    background-size: 1rem 1rem;
+        linear-gradient(45deg, var(--lime) 25%, transparent 25%),
+        linear-gradient(135deg, var(--lime) 25%, transparent 25%);
+    background-position: 0rem -0.25rem, 0rem 0.25rem, 1rem -0.25rem, 1rem 0.25rem;
+    background-size: 0.5rem 0.5rem;
 }
 
 /* inner div of top of easter egg */
@@ -565,7 +566,7 @@ main {
     border-radius: 50%;
     background-color: transparent;
     background-image: 
-        radial-gradient(var(--yellow) 25%, transparent 25%),
+        radial-gradient(var(--cyan) 25%, transparent 25%),
         radial-gradient(var(--orange) 25%, transparent 25%);
     background-position: 0rem 0.25rem, 0.5rem 0.75rem;
     background-size: 1rem 1rem;
@@ -589,13 +590,14 @@ main {
         0deg,
         var(--hot-pink),
         var(--hot-pink) 0.5rem,
-        var(--cyan) 0.5rem,
-        var(--cyan) 1rem
+        var(--yellow) 0.5rem,
+        var(--yellow) 1rem
     );
 }
 
 /* inner div of bottom of easter egg */
-/* repeating polka dots on transparent background */
+/* repeating rhombus pattern */
+/* 315deg top left triangle, 225deg bottom left triangle, 45deg top right triangle, 135deg bottom right triangle */
 .easter-egg-bottom-inner:before {
     content: '';
     position: absolute;
@@ -605,6 +607,13 @@ main {
     height: 4rem;
     border-radius: 50%;
     background-color: transparent;
+    background-image:
+        linear-gradient(315deg, var(--lime) 25%, transparent 25%),
+        linear-gradient(225deg, var(--lime) 25%, transparent 25%),
+        linear-gradient(45deg, var(--lime) 25%, transparent 25%),
+        linear-gradient(135deg, var(--lime) 25%, transparent 25%);
+    background-position: 0rem -0.25rem, 0rem 0.25rem, 1rem -0.25rem, 1rem 0.25rem;
+    background-size: 0.5rem 0.5rem;
 }
 
 /* inner div of bottom of easter egg */
@@ -619,7 +628,7 @@ main {
     border-radius: 50%;
     background-color: transparent;
     background-image: 
-        radial-gradient(var(--yellow) 25%, transparent 25%),
+        radial-gradient(var(--cyan) 25%, transparent 25%),
         radial-gradient(var(--orange) 25%, transparent 25%);
     background-position: 0rem 0.25rem, 0.5rem 0.75rem;
     background-size: 1rem 1rem;
@@ -734,16 +743,4 @@ main {
     75% {
         background-color: var(--orange);
     }
-}
-
-.zig-zag { 
-    background:
-        linear-gradient(135deg, var(--yellow) 25%, transparent 25%) -50px 0,
-        linear-gradient(225deg, var(--yellow) 25%, transparent 25%) -50px 0,
-        linear-gradient(315deg, var(--yellow) 25%, transparent 25%),
-        linear-gradient(45deg, var(--yellow) 25%, transparent 25%);
-    background-size: 100px 100px;
-    background-color: transparent;
-    height: 200px;
-    width: 200px;
 }

@@ -63,7 +63,7 @@ function addEye(eyes) {
     // put eye light in eye shadow div
     eyeShadow.appendChild(eyeLight);
 
-    if ((eyes % randomNumber === 0 || randomNumber % eyes === 0) && randomNumber != 1 && eyes != 1) {
+    if ((eyes % randomNumber === 0 || randomNumber % eyes === 0) && randomNumber > 1 && eyes > 1) {
         eye.classList.add('tilted-human-eye');
 
         eyeShadow.classList.add('human-eye-shadow');

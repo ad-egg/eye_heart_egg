@@ -613,7 +613,7 @@ main {
     border-radius: 50%;
     background-color: transparent;
     background-image: 
-        radial-gradient(var(--cyan) 25%, transparent 25%),
+        radial-gradient(var(--yellow) 25%, transparent 25%),
         radial-gradient(var(--orange) 25%, transparent 25%);
     background-position: 0rem 0.25rem, 0.5rem 0.75rem;
     background-size: 1rem 1rem;
@@ -675,7 +675,7 @@ main {
     border-radius: 50%;
     background-color: transparent;
     background-image: 
-        radial-gradient(var(--cyan) 25%, transparent 25%),
+        radial-gradient(var(--yellow) 25%, transparent 25%),
         radial-gradient(var(--orange) 25%, transparent 25%);
     background-position: 0rem 0.25rem, 0.5rem 0.75rem;
     background-size: 1rem 1rem;

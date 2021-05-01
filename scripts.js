@@ -45,29 +45,43 @@ function addEye(eyes) {
     // put pupil in iris
     eyeballIris.appendChild(eyeballPupil);
 
-    // make eyeball
-    let eyeball = document.createElement('div');
-    eyeball.classList.add('eyeball');
+    // get a random number between 1 - 10
+    const randomNumber = Math.floor(Math.random() * (10 - 1)) + 1;
 
-    // put iris in eyeball
-    eyeball.appendChild(eyeballIris);
+    // make eye, add class for eyeball or human eye later
+    let eye = document.createElement('div');
 
-    // shadow for eyeball
-    let eyeballShadow = document.createElement('div');
-    eyeballShadow.classList.add('eyeball-shadow');
+    // put iris in eye
+    eye.appendChild(eyeballIris);
 
-    // light for eyeball
-    let eyeballLight = document.createElement('div');
-    eyeballLight.classList.add('eyeball-light');
+    // shadow for eye, add class for eyeball or human eye later
+    let eyeShadow = document.createElement('div');
 
-    // put eyeball light in eyeball shadow div
-    eyeballShadow.appendChild(eyeballLight);
+    // light for eye, add class for eyeball or human eye later
+    let eyeLight = document.createElement('div');
+
+    // put eye light in eye shadow div
+    eyeShadow.appendChild(eyeLight);
+
+    if (eyes % randomNumber === 0 && randomNumber != 1) {
+        eye.classList.add('tilted-human-eye');
+
+        eyeShadow.classList.add('human-eye-shadow');
+
+        eyeLight.classList.add('human-eye-light');
+    } else {
+        eye.classList.add('eyeball');
+
+        eyeShadow.classList.add('eyeball-shadow');
+
+        eyeLight.classList.add('eyeball-light');
+    }
 
     // container div for eyeball
     let eyeBox = document.createElement('div');
     eyeBox.classList.add('eye-box');
-    eyeBox.appendChild(eyeball);
-    eyeBox.appendChild(eyeballShadow);
+    eyeBox.appendChild(eye);
+    eyeBox.appendChild(eyeShadow);
 
     // put the eyeball in the DOM
     document.getElementById('basket').appendChild(eyeBox);

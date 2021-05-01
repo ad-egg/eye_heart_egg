@@ -45,8 +45,8 @@ function addEye(eyes) {
     // put pupil in iris
     eyeballIris.appendChild(eyeballPupil);
 
-    // get a random number between 1 - 10
-    const randomNumber = Math.floor(Math.random() * (10 - 1)) + 1;
+    // get a random number between 1 - 100, don't want zero division error!
+    const randomNumber = Math.floor(Math.random() * (100 - 1)) + 1;
 
     // make eye, add class for eyeball or human eye later
     let eye = document.createElement('div');
@@ -63,7 +63,7 @@ function addEye(eyes) {
     // put eye light in eye shadow div
     eyeShadow.appendChild(eyeLight);
 
-    if (eyes % randomNumber === 0 && randomNumber != 1) {
+    if ((eyes % randomNumber === 0 || randomNumber % eyes === 0) && randomNumber != 1) {
         eye.classList.add('tilted-human-eye');
 
         eyeShadow.classList.add('human-eye-shadow');

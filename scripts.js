@@ -1,3 +1,28 @@
+// check theme selection when load page
+document.addEventListener('DOMContentLoaded', function () {
+    const currentTheme = localStorage.getItem('theme') || null;
+    const toggleSwitch = document.querySelector('#theme-label input[type="checkbox"]');
+    toggleSwitch.addEventListener('change', switchTheme, false);
+    if (currentTheme) {
+      document.documentElement.setAttribute('data-theme', currentTheme);
+      if (currentTheme === 'day') {
+        toggleSwitch.checked = true;
+      }
+    }
+});
+
+// function for switch page theme
+function switchTheme(e) {
+    if (e.target.checked) {
+        document.documentElement.setAttribute('data-theme', 'day');
+	localStorage.setItem('theme', 'day');
+    }
+    else {
+        document.documentElement.setAttribute('data-theme', 'night');
+	localStorage.setItem('theme', 'night');
+    }    
+}
+
 function generateEyeHeartEgg() {
     // count number of eye divs
     let eyes = document.getElementsByClassName('eye-box').length;

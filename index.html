@@ -31,8 +31,9 @@
     <main>
         <!-- pick a image to generate -->
         <form name="choiceform">
+            <!-- fixed position div that covers viewport -->
             <div id="entire-screen">
-                <span id="operating-instructions" class="center">click for 
+                <div id="user-choices">click for 
                     <span id="choices-radio">
                         <input name="choices" type="radio" id="input-eye" value="eye">
                         <label for="input-eye">eye</label>
@@ -41,7 +42,14 @@
                         <input name="choices" type="radio" id="input-egg" value="egg" checked>
                         <label for="input-egg">egg</label>
                     </span>
-                </span>
+
+                    <div id="theme-switch-wrapper">
+                        <label for="checkBox" id="theme-label">
+                            <input type="checkbox" id="checkBox">
+                            <div class="slider round"></div>
+                        </label>
+                    </div>
+                </div>
                 <button id="click-for-eye-heart-egg" class="center" type="button" onclick="generateEyeHeartEgg()"></button>
             </div>
         </form>

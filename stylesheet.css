@@ -22,6 +22,8 @@
     --red: #FF0000;
     --coral: #FF7F50;
     --orange: #FFA500;
+    --gold: #FFD700;
+    --burlywood: #DEB887;
     --yellow: #FFFF00;
     --lime: #00FF00;
     --green: #008000;
@@ -62,6 +64,9 @@
     --background-color: var(--dark-gray);
     --color: var(--lighter-gray);
     --label-highlight: var(--indigo);
+    --slider-bg: var(--white);
+    --slider-before-bg: var(--gold);
+    --slider-round: var(--burlywood);
     --egg-color: var(--eggshell);
     --egg-gradient: var(--med-light-yellow);
     --egg-shadow: var(--med-light-red);
@@ -84,12 +89,10 @@
 }
 
 /* light theme colors */
-[data-theme="daytime"] {
+[data-theme="day"] {
     --background-color: var(--med-gray);
     --color: var(--near-black);
-    --egg-color: var(--white);
-    --egg-shadow: #00FF00;
-    --heart-color: #FF0000;
+    --label-highlight: var(--magenta);
 }
 
 /* body styling */
@@ -133,13 +136,13 @@ main {
     z-index: 42;
 }
 
-/* style the operating instructions */
-#operating-instructions {
+/* style the user choices (radio inputs and theme toggle) */
+#user-choices {
     font-weight: bold;
     display: table-row;
     width: 100%;
     font-size: 2rem;
-    background-color: var(--darkest-gray);
+    justify-content: space-between;
 }
 
 /* hide the radio buttons */
@@ -162,6 +165,67 @@ main {
     border: none;
     padding: 0;
     opacity: 0;
+}
+
+/* THEME TOGGLE */
+#theme-switch-wrapper {
+	display: flex;
+	align-items: center;
+	height: 34px;
+	width: 60px;
+	margin: 0px;
+    float: right;
+}
+
+#theme-label {
+	display: inline-block;
+	height: 34px;
+	position: relative;
+	width: 60px;
+}
+
+#checkBox {
+	display: none;
+}
+
+.slider {
+	width: 100%;
+	background-color: var(--slider-bg);
+	cursor: pointer;
+	transition: 0.5s;
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	left: 0;
+	right: 0;
+}
+
+.slider:before {
+	background-color: var(--slider-before-bg);
+	bottom: 3px;
+	left: 4px;
+	content: '';
+	height: 24px;
+	width: 26px;
+	position: absolute;
+	transition: 0.5s;
+}
+
+input:checked + .slider {
+	background-color: var(--slider-bg);
+}
+
+input:checked + .slider:before {
+	transform: translateX(24px);
+}
+
+.slider.round {
+	border-radius: 32px;
+	border: 2px solid var(--slider-round);
+}
+
+.slider.round:before {
+	border-radius: 50%;
 }
 
 /* CSS art container styling */

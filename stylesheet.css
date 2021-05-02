@@ -176,7 +176,6 @@ main {
 
 /* THEME TOGGLE */
 #theme-switch-wrapper {
-    display: inline-block;
     float: right;
     margin-right: 1.5rem;
 	height: 34px;

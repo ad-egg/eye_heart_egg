@@ -175,65 +175,7 @@ main {
 }
 
 /* THEME TOGGLE */
-#theme-switch-wrapper {
-    float: right;
-    margin-right: 1.5rem;
-	height: 34px;
-	width: 60px;
-    text-align: center;
-    vertical-align: middle;
-}
 
-#theme-label {
-	display: inline-block;
-    position: relative;
-	height: 34px;
-	width: 60px;
-}
-
-#checkBox {
-	display: none;
-}
-
-.slider {
-	width: 100%;
-	background-color: var(--slider-bg);
-	cursor: pointer;
-	transition: 0.5s;
-	position: absolute;
-	bottom: 0;
-	top: 0;
-	left: 0;
-	right: 0;
-}
-
-.slider:before {
-	background-color: var(--slider-before-bg);
-	bottom: 3px;
-	left: 4px;
-	content: '';
-	height: 24px;
-	width: 26px;
-	position: absolute;
-	transition: 0.5s;
-}
-
-input:checked + .slider {
-	background-color: var(--slider-bg);
-}
-
-input:checked + .slider:before {
-	transform: translateX(24px);
-}
-
-.slider.round {
-	border-radius: 32px;
-	border: 2px solid var(--slider-round);
-}
-
-.slider.round:before {
-	border-radius: 50%;
-}
 
 /* CSS art container styling */
 #basket {

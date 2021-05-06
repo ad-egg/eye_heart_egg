@@ -64,6 +64,9 @@
     --background-color: var(--dark-gray);
     --color: var(--lighter-gray);
     --label-highlight: var(--indigo);
+    --theme-toggle: var(--gold);
+    --theme-toggle-gradient: var(--orange);
+    --theme-toggle-shadow: var(--orange);
     --egg-color: var(--eggshell);
     --egg-gradient: var(--med-light-yellow);
     --egg-shadow: var(--med-light-red);
@@ -176,8 +179,46 @@ main {
 /* div that holds the theme toggle checkbox and label */
 #theme-toggle-wrapper {
     display: inline-block;
+    position: relative;
     width: 2rem;
     height: 2rem;
+}
+
+#themeCheckbox {
+    width: 0%;
+    height: 0%;
+    padding: 0rem;
+    margin: 0rem;
+}
+
+/* label for the theme toggle checkbox */
+#theme-label {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+/* div that changes appearance as theme is toggled */
+/* in default dark theme this is golden and orange circle for sun */
+#theme-toggle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--theme-toggle);
+    background-image: radial-gradient(var(--theme-toggle-gradient), var(--theme-toggle));
+}
+
+/* in default dark theme this is orange glow for sun */
+/* box-shadow: offset-x offset-y blur-radius spread-radius color, inset offset-x offset-y color */
+#theme-toggle:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: transparent;
+    box-shadow: 0rem 0rem 0.5rem 0.125rem var(--theme-toggle-shadow);
 }
 
 /* CSS art container styling */
@@ -220,6 +261,7 @@ main {
 }
 
 /* eyeball shadow */
+/* box-shadow: offset-x offset-y blur-radius spread-radius color, inset offset-x offset-y color */
 .eyeball-shadow {
     position: absolute;
     height: 5rem;
@@ -234,6 +276,7 @@ main {
 }
 
 /* reflected light in eyeball */
+/* box-shadow: offset-x offset-y blur-radius spread-radius color, inset offset-x offset-y color */
 .eyeball-light {
     position: absolute;
     border-radius: 50%;
@@ -247,6 +290,7 @@ main {
 }
 
 /* iris of eyeball */
+/* box-shadow: offset-x offset-y blur-radius spread-radius color, inset offset-x offset-y color */
 /* box-shadow order: top left, top right, bottom right, bottom left */
 .eyeball-iris {
     position: absolute;
@@ -298,6 +342,7 @@ main {
 }
 
 /* box shadow for human eye, tilted 45deg */
+/* box-shadow: offset-x offset-y blur-radius spread-radius color, inset offset-x offset-y color */
 .human-eye-shadow {
     height: 3.5rem;
     width: 3.5rem;
@@ -314,6 +359,7 @@ main {
 }
 
 /* reflected light in human eye */
+/* box-shadow: offset-x offset-y blur-radius spread-radius color, inset offset-x offset-y color */
 .human-eye-light {
     position: absolute;
     border-radius: 50%;
@@ -509,6 +555,7 @@ main {
 }
 
 /* div for box-shadow of top of egg */
+/* box-shadow: offset-x offset-y blur-radius spread-radius color, inset offset-x offset-y color */
 /* box-shadow order: top left, top right, bottom right, bottom left */
 .egg-top-shadow {
     position: absolute;
@@ -540,6 +587,7 @@ main {
 }
 
 /* div for box-shadow of bottom of egg */
+/* box-shadow: offset-x offset-y blur-radius spread-radius color, inset offset-x offset-y color */
 /* box-shadow order: top left, top right, bottom right, bottom left */
 .egg-bottom-shadow {
     position: absolute;
@@ -674,6 +722,15 @@ main {
 
 /* ANIMATIONS */
 
+/* in default dark theme this animates the orange glow for sun */
+#theme-toggle:hover:before {
+    animation-name: sun-glow;
+    animation-duration: 2s;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+
 /* beating hex code heart */
 .heartbeat {
     animation-name: heartbeat;
@@ -720,6 +777,17 @@ main {
 }
 
 /* KEYFRAMES */
+
+/* changes box-shadow blur radius and spread radius */
+/* box-shadow: offset-x offset-y blur-radius spread-radius color, inset offset-x offset-y color */
+@keyframes sun-glow {
+    0%, 100% {
+        box-shadow: 0rem 0rem 0.5rem 0.125rem var(--theme-toggle-shadow);
+    }
+    50% {
+        box-shadow: 0rem 0rem 0.75rem 0.125rem var(--theme-toggle-shadow);
+    }
+}
 
 /* move iris with pupil in it up and back down by change margin-top */
 @keyframes eyeroll-eyeball {

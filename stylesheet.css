@@ -222,6 +222,15 @@ main {
     box-shadow: 0rem 0rem 0.5rem 0.125rem var(--theme-toggle-shadow);
 }
 
+/* style the theme toggle checkbox label when checkbox is checked */
+#theme-toggle-wrapper input[type="checkbox"]:checked + #theme-label #theme-toggle {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--blue);
+}
+
 /* CSS art container styling */
 #basket {
     display: flex;

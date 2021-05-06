@@ -64,9 +64,6 @@
     --background-color: var(--dark-gray);
     --color: var(--lighter-gray);
     --label-highlight: var(--indigo);
-    --slider-bg: var(--white);
-    --slider-before-bg: var(--gold);
-    --slider-round: var(--burlywood);
     --egg-color: var(--eggshell);
     --egg-gradient: var(--med-light-yellow);
     --egg-shadow: var(--med-light-red);
@@ -176,6 +173,12 @@ main {
 
 /* THEME TOGGLE */
 
+/* div that holds the theme toggle checkbox and label */
+#theme-toggle-wrapper {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+}
 
 /* CSS art container styling */
 #basket {

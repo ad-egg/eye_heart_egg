@@ -158,7 +158,11 @@ main {
 
 /* hide the radio buttons */
 #input-eye, #input-heart, #input-egg {
-    display: none;
+    width: 0rem;
+    height: 0rem;
+    padding: 0rem;
+    margin: 0rem;
+    opacity: 0;
 }
 
 /* style the radio input labels when radio button is checked */
@@ -188,7 +192,11 @@ main {
 }
 
 #themeCheckbox {
-    display: none;
+    width: 0rem;
+    height: 0rem;
+    padding: 0rem;
+    margin: 0rem;
+    opacity: 0;
 }
 
 /* label for the theme toggle checkbox */

@@ -15,11 +15,11 @@ document.addEventListener('DOMContentLoaded', function () {
 function switchTheme(e) {
     if (e.target.checked) {
         document.documentElement.setAttribute('data-theme', 'day');
-	localStorage.setItem('theme', 'day');
+	    localStorage.setItem('theme', 'day');
     }
     else {
         document.documentElement.setAttribute('data-theme', 'night');
-	localStorage.setItem('theme', 'night');
+	    localStorage.setItem('theme', 'night');
     }    
 }
 

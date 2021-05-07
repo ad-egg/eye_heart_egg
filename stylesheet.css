@@ -64,9 +64,9 @@
     --background-color: var(--dark-gray);
     --color: var(--lighter-gray);
     --label-highlight: var(--indigo);
-    --theme-toggle: var(--gold);
-    --theme-toggle-gradient: var(--orange);
-    --theme-toggle-shadow: var(--orange);
+    --sun-color: var(--gold);
+    --sun-gradient: var(--orange);
+    --sun-shadow: var(--orange);
     --egg-color: var(--eggshell);
     --egg-gradient: var(--med-light-yellow);
     --egg-shadow: var(--med-light-red);
@@ -160,6 +160,7 @@ main {
 }
 
 /* style the radio input labels when radio button is checked */
+/* + is adjacent sibling combinator, matches second element only if it immediately follows first element */
 #choices-radio input[type="radio"]:checked + label {
     background-color: var(--label-highlight);
 }
@@ -201,35 +202,36 @@ main {
 
 /* div that changes appearance as theme is toggled */
 /* in default dark theme this is golden and orange circle for sun */
+/* in light theme this is crescent moon */
 #theme-toggle {
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-    background-color: var(--theme-toggle);
-    background-image: radial-gradient(var(--theme-toggle-gradient), var(--theme-toggle));
 }
 
-/* in default dark theme this is orange glow for sun */
+/* theme toggle when it looks like sun */
+.sun {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: var(--sun-color);
+    background-image: radial-gradient(var(--sun-gradient), var(--sun-color));
+}
+
+/* orange glow for sun */
 /* box-shadow: offset-x offset-y blur-radius spread-radius color, inset offset-x offset-y color */
-#theme-toggle:before {
+.sun:before {
     content: '';
     position: absolute;
     width: 100%;
     height: 100%;
     border-radius: 50%;
     background-color: transparent;
-    box-shadow: 0rem 0rem 0.5rem 0.125rem var(--theme-toggle-shadow);
+    box-shadow: 0rem 0rem 0.5rem 0.125rem var(--sun-shadow);
 }
 
-/* style the theme toggle checkbox label when checkbox is checked */
-#theme-toggle-wrapper input[type="checkbox"]:checked + #theme-label #theme-toggle {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    background-color: var(--blue);
-}
+
 
 /* CSS art container styling */
 #basket {
@@ -792,10 +794,10 @@ main {
 /* box-shadow: offset-x offset-y blur-radius spread-radius color, inset offset-x offset-y color */
 @keyframes sun-glow {
     0%, 100% {
-        box-shadow: 0rem 0rem 0.5rem 0.125rem var(--theme-toggle-shadow);
+        box-shadow: 0rem 0rem 0.5rem 0.125rem var(--sun-shadow);
     }
     50% {
-        box-shadow: 0rem 0rem 0.75rem 0.125rem var(--theme-toggle-shadow);
+        box-shadow: 0rem 0rem 0.75rem 0.125rem var(--sun-shadow);
     }
 }
 

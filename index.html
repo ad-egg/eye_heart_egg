@@ -35,6 +35,7 @@
             <div id="entire-screen">
                 <div id="user-choices">
                     <span id="choices-radio">click for 
+                        <!-- label has to come after the input as a sibling because of the CSS selector targeting it to change label bg color -->
                         <input name="choices" type="radio" id="input-eye" value="eye">
                         <label for="input-eye">eye</label>
                         <input name="choices" type="radio" id="input-heart" value="heart">
@@ -45,8 +46,9 @@
 
                     <!-- working on a checkbox theme toggle -->
                     <div id="theme-toggle-wrapper">
-                        <!-- the label is the visible part -->
+                        <!-- checkbox is not visible -->
                         <input type="checkbox" id="themeCheckbox">
+                        <!-- the label contains the visible part -->
                         <label for="themeCheckbox" id="theme-label">light/dark theme toggle
                             <div id="theme-toggle" class="sun"></div>
                         </label>

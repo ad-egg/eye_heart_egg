@@ -7,19 +7,37 @@ document.addEventListener('DOMContentLoaded', function () {
       document.documentElement.setAttribute('data-theme', currentTheme);
       if (currentTheme === 'day') {
         toggleSwitch.checked = true;
+        // get the theme toggle div
+        let themeToggle = document.querySelector('#theme-toggle');
+        // replace the theme div class
+        // classList.replace(oldClass, newClass)
+        themeToggle.classList.replace('sun', 'moon');
       }
     }
 });
 
 // function for switch page theme
 function switchTheme(e) {
+    // get the theme toggle div
+    let themeToggle = document.querySelector('#theme-toggle');
+
     if (e.target.checked) {
+        // sets the data-theme in the html tag
         document.documentElement.setAttribute('data-theme', 'day');
+        // saves the theme in local storage
 	    localStorage.setItem('theme', 'day');
+        // replace the theme div class
+        // classList.replace(oldClass, newClass)
+        themeToggle.classList.replace('sun', 'moon');
     }
     else {
+        // sets the data-theme in the html tag
         document.documentElement.setAttribute('data-theme', 'night');
+        // saves the theme in local storage
 	    localStorage.setItem('theme', 'night');
+        // replace the theme div class
+        // classList.replace(oldClass, newClass)
+        themeToggle.classList.replace('moon', 'sun');
     }    
 }
 

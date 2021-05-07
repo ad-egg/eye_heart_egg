@@ -18,6 +18,7 @@
     --cream: #FFFDD0;
     --beige: #F5F5DC;
     --eggshell: #F0EAD6;
+    --silver: #C0C0C0;
 
     --red: #FF0000;
     --coral: #FF7F50;
@@ -90,9 +91,12 @@
 
 /* light theme colors */
 [data-theme="day"] {
-    --background-color: var(--med-gray);
-    --color: var(--near-black);
+    --background-color: var(--beige);
+    --color: var(--darker-gray);
     --label-highlight: var(--magenta);
+    --moon-border: var(--dark-gray);
+    --moon-color: var(--silver);
+    --moon-shadow: var(--dark-gray);
 }
 
 /* body styling */
@@ -154,9 +158,7 @@ main {
 
 /* hide the radio buttons */
 #input-eye, #input-heart, #input-egg {
-    width: 0rem;
-    height: 0rem;
-    margin: 0rem;
+    display: none;
 }
 
 /* style the radio input labels when radio button is checked */
@@ -186,10 +188,7 @@ main {
 }
 
 #themeCheckbox {
-    width: 0%;
-    height: 0%;
-    padding: 0rem;
-    margin: 0rem;
+    display: none;
 }
 
 /* label for the theme toggle checkbox */
@@ -207,6 +206,7 @@ main {
     position: absolute;
     width: 100%;
     height: 100%;
+    box-sizing: border-box;
 }
 
 /* theme toggle when it looks like sun */
@@ -231,7 +231,31 @@ main {
     box-shadow: 0rem 0rem 0.5rem 0.125rem var(--sun-shadow);
 }
 
+/* theme toggle when it looks like moon when light theme */
+/* silver moon with a dark border */
+.moon {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: solid 0.25rem var(--moon-border);
+    background-color: var(--moon-color);
+    overflow: hidden;
+}
 
+/* dark shadow over the full moon to look like crescent moon */
+.moon:before {
+    content: '';
+    position: absolute;
+    width: 96%;
+    height: 96%;
+    left: 25%;
+    top: 2%;
+    bottom: 2%;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--moon-border);
+}
 
 /* CSS art container styling */
 #basket {
@@ -734,24 +758,6 @@ main {
 
 /* ANIMATIONS */
 
-/* in default dark theme this animates the orange glow for sun */
-#theme-toggle:hover:before {
-    animation-name: sun-glow;
-    animation-duration: 2s;
-    animation-delay: 0s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
-}
-
-/* beating hex code heart */
-.heartbeat {
-    animation-name: heartbeat;
-    animation-duration: 1s;
-    animation-delay: 0s;
-    animation-timing-function: ease-in-out;
-    animation-iteration-count: infinite;
-}
-
 /* eyeroll for eyeball */
 .eyeroll-eyeball {
     animation-name: eyeroll-eyeball;
@@ -770,6 +776,15 @@ main {
     animation-iteration-count: infinite;
 }
 
+/* beating hex code heart */
+.heartbeat {
+    animation-name: heartbeat;
+    animation-duration: 1s;
+    animation-delay: 0s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
 /* linear rotate element 22.5deg 0.125s nonstop */
 .shake {
     animation-name: shake;
@@ -779,27 +794,25 @@ main {
     animation-iteration-count: infinite;
 }
 
-/* linear change bg color red-orange-yellow-orange 2s nonstop */
-.warm {
-    animation-name: warm;
+/* animates the orange glow for sun */
+.sun:hover:before {
+    animation-name: sun-glow;
     animation-duration: 2s;
     animation-delay: 0s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
 }
 
-/* KEYFRAMES */
-
-/* changes box-shadow blur radius and spread radius */
-/* box-shadow: offset-x offset-y blur-radius spread-radius color, inset offset-x offset-y color */
-@keyframes sun-glow {
-    0%, 100% {
-        box-shadow: 0rem 0rem 0.5rem 0.125rem var(--sun-shadow);
-    }
-    50% {
-        box-shadow: 0rem 0rem 0.75rem 0.125rem var(--sun-shadow);
-    }
+/* linear change bg color red-orange-yellow-orange 2s nonstop */
+.warm {
+    animation-name: warm;
+    animation-duration: 4s;
+    animation-delay: 0s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 }
+
+/* KEYFRAMES */
 
 /* move iris with pupil in it up and back down by change margin-top */
 @keyframes eyeroll-eyeball {
@@ -844,6 +857,17 @@ main {
     }
     75% {
         transform: rotate(-22.5deg);
+    }
+}
+
+/* changes box-shadow blur radius and spread radius */
+/* box-shadow: offset-x offset-y blur-radius spread-radius color, inset offset-x offset-y color */
+@keyframes sun-glow {
+    0%, 100% {
+        box-shadow: 0rem 0rem 0.5rem 0.125rem var(--sun-shadow);
+    }
+    50% {
+        box-shadow: 0rem 0rem 0.75rem 0.125rem var(--sun-shadow);
     }
 }
 

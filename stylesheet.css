@@ -174,7 +174,7 @@ main {
 /* styling for full-screen button */
 #click-for-eye-heart-egg {
     display: table-row;
-    height: 100%;
+    height: 100vh;
     width: 100%;
     border: none;
     padding: 0;
@@ -215,6 +215,10 @@ main {
     width: 100%;
     height: 100%;
     box-sizing: border-box;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
 }
 
 /* theme toggle when it looks like sun */

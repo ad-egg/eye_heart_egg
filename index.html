@@ -31,9 +31,11 @@
     <main>
         <!-- pick a image to generate -->
         <form name="choiceform">
+            <!-- fixed position div that covers viewport -->
             <div id="entire-screen">
-                <span id="operating-instructions" class="center">click for 
-                    <span id="choices-radio">
+                <div id="user-choices">
+                    <span id="choices-radio">click for 
+                        <!-- label has to come after the input as a sibling because of the CSS selector targeting it to change label bg color -->
                         <input name="choices" type="radio" id="input-eye" value="eye">
                         <label for="input-eye">eye</label>
                         <input name="choices" type="radio" id="input-heart" value="heart">
@@ -41,7 +43,17 @@
                         <input name="choices" type="radio" id="input-egg" value="egg" checked>
                         <label for="input-egg">egg</label>
                     </span>
-                </span>
+
+                    <!-- working on a checkbox theme toggle -->
+                    <div id="theme-toggle-wrapper">
+                        <!-- checkbox is not visible -->
+                        <input type="checkbox" id="themeCheckbox">
+                        <!-- the label contains the visible part -->
+                        <label for="themeCheckbox" id="theme-label">change theme
+                            <div id="theme-toggle" class="sun"></div>
+                        </label>
+                    </div>
+                </div>
                 <button id="click-for-eye-heart-egg" class="center" type="button" onclick="generateEyeHeartEgg()"></button>
             </div>
         </form>

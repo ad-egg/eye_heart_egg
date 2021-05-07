@@ -1,3 +1,46 @@
+// check theme selection when load page
+document.addEventListener('DOMContentLoaded', function () {
+    const currentTheme = localStorage.getItem('theme') || null;
+    const toggleSwitch = document.querySelector('#themeCheckbox');
+    toggleSwitch.addEventListener('change', switchTheme, false);
+    if (currentTheme) {
+      document.documentElement.setAttribute('data-theme', currentTheme);
+      if (currentTheme === 'day') {
+        toggleSwitch.checked = true;
+        // get the theme toggle div
+        let themeToggle = document.querySelector('#theme-toggle');
+        // replace the theme div class
+        // classList.replace(oldClass, newClass)
+        themeToggle.classList.replace('sun', 'moon');
+      }
+    }
+});
+
+// function for switch page theme
+function switchTheme(e) {
+    // get the theme toggle div
+    let themeToggle = document.querySelector('#theme-toggle');
+
+    if (e.target.checked) {
+        // sets the data-theme in the html tag
+        document.documentElement.setAttribute('data-theme', 'day');
+        // saves the theme in local storage
+	    localStorage.setItem('theme', 'day');
+        // replace the theme div class
+        // classList.replace(oldClass, newClass)
+        themeToggle.classList.replace('sun', 'moon');
+    }
+    else {
+        // sets the data-theme in the html tag
+        document.documentElement.setAttribute('data-theme', 'night');
+        // saves the theme in local storage
+	    localStorage.setItem('theme', 'night');
+        // replace the theme div class
+        // classList.replace(oldClass, newClass)
+        themeToggle.classList.replace('moon', 'sun');
+    }    
+}
+
 function generateEyeHeartEgg() {
     // count number of eye divs
     let eyes = document.getElementsByClassName('eye-box').length;

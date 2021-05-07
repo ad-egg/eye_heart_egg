@@ -147,7 +147,6 @@ main {
     border-collapse: collapse;
     width: 100%;
     height: 3rem;
-    justify-content: space-between;
 }
 
 /* style the radio choices text */

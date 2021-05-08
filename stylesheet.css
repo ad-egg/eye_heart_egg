@@ -111,7 +111,7 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 100vw;
+    width: 98vw;
     font-family: var(--font-family);
     background-color: var(--background-color);
     color: var(--color);
@@ -154,9 +154,11 @@ main {
 }
 
 /* style the radio choices text */
+/* text-shadow: offset-x | offset-y | blur-radius | color */
 #choices-radio {
     font-weight: bold;
     font-size: 2rem;
+    text-shadow: 0rem 0rem 0.25rem var(--background-color);
 }
 
 /* hide the radio buttons */
@@ -479,6 +481,7 @@ main {
 }
 
 /* heart using hex code */
+/* text-shadow: offset-x | offset-y | blur-radius | color */
 .hex-heart {
     color: var(--heart-color);
     font-size: 4rem;

@@ -792,8 +792,8 @@ main {
 .eyeroll-eyeball {
     animation-name: eyeroll-eyeball;
     animation-duration: 4s;
-    animation-delay: 0s;
     animation-timing-function: ease-in;
+    animation-delay: 0s;
     animation-iteration-count: infinite;
 }
 
@@ -801,8 +801,8 @@ main {
 .eyeroll-human-eye {
     animation-name: eyeroll-human-eye;
     animation-duration: 4s;
-    animation-delay: 0s;
     animation-timing-function: ease-in;
+    animation-delay: 0s;
     animation-iteration-count: infinite;
 }
 
@@ -810,8 +810,8 @@ main {
 .heartbeat {
     animation-name: heartbeat;
     animation-duration: 1s;
-    animation-delay: 0s;
     animation-timing-function: ease-in-out;
+    animation-delay: 0s;
     animation-iteration-count: infinite;
 }
 
@@ -819,8 +819,8 @@ main {
 .shake {
     animation-name: shake;
     animation-duration: 0.125s;
-    animation-delay: 0s;
     animation-timing-function: linear;
+    animation-delay: 0s;
     animation-iteration-count: infinite;
 }
 
@@ -828,8 +828,8 @@ main {
 .sun:hover:before {
     animation-name: sun-glow;
     animation-duration: 2s;
-    animation-delay: 0s;
     animation-timing-function: linear;
+    animation-delay: 0s;
     animation-iteration-count: infinite;
 }
 
@@ -837,8 +837,8 @@ main {
 .warm {
     animation-name: warm;
     animation-duration: 4s;
-    animation-delay: 0s;
     animation-timing-function: linear;
+    animation-delay: 0s;
     animation-iteration-count: infinite;
 }
 

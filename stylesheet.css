@@ -111,7 +111,7 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 98vw;
+    width: 100vw;
     font-family: var(--font-family);
     background-color: var(--background-color);
     color: var(--color);

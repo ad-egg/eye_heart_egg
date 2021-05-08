@@ -161,6 +161,11 @@ main {
     text-shadow: 0rem 0rem 0.25rem var(--background-color);
 }
 
+/* pointer cursor when pass over label */
+#choices-radio label {
+    cursor: pointer;
+}
+
 /* hide the radio buttons */
 #input-eye, #input-heart, #input-egg {
     width: 0rem;
@@ -184,6 +189,7 @@ main {
     border: none;
     padding: 0;
     opacity: 0;
+    cursor: pointer;
 }
 
 /* THEME TOGGLE */
@@ -224,6 +230,7 @@ main {
     right: 0%;
     bottom: 0%;
     left: 0%;
+    cursor: pointer;
 }
 
 /* theme toggle when it looks like sun */

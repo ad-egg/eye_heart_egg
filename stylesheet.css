@@ -111,7 +111,7 @@ body {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
-    width: 100vw;
+    width: 98vw;
     font-family: var(--font-family);
     background-color: var(--background-color);
     color: var(--color);
@@ -154,9 +154,11 @@ main {
 }
 
 /* style the radio choices text */
+/* text-shadow: offset-x | offset-y | blur-radius | color */
 #choices-radio {
     font-weight: bold;
     font-size: 2rem;
+    text-shadow: 0rem 0rem 0.25rem var(--background-color);
 }
 
 /* hide the radio buttons */
@@ -479,6 +481,7 @@ main {
 }
 
 /* heart using hex code */
+/* text-shadow: offset-x | offset-y | blur-radius | color */
 .hex-heart {
     color: var(--heart-color);
     font-size: 4rem;
@@ -789,8 +792,8 @@ main {
 .eyeroll-eyeball {
     animation-name: eyeroll-eyeball;
     animation-duration: 4s;
-    animation-delay: 0s;
     animation-timing-function: ease-in;
+    animation-delay: 0s;
     animation-iteration-count: infinite;
 }
 
@@ -798,8 +801,8 @@ main {
 .eyeroll-human-eye {
     animation-name: eyeroll-human-eye;
     animation-duration: 4s;
-    animation-delay: 0s;
     animation-timing-function: ease-in;
+    animation-delay: 0s;
     animation-iteration-count: infinite;
 }
 
@@ -807,8 +810,8 @@ main {
 .heartbeat {
     animation-name: heartbeat;
     animation-duration: 1s;
-    animation-delay: 0s;
     animation-timing-function: ease-in-out;
+    animation-delay: 0s;
     animation-iteration-count: infinite;
 }
 
@@ -816,8 +819,8 @@ main {
 .shake {
     animation-name: shake;
     animation-duration: 0.125s;
-    animation-delay: 0s;
     animation-timing-function: linear;
+    animation-delay: 0s;
     animation-iteration-count: infinite;
 }
 
@@ -825,8 +828,8 @@ main {
 .sun:hover:before {
     animation-name: sun-glow;
     animation-duration: 2s;
-    animation-delay: 0s;
     animation-timing-function: linear;
+    animation-delay: 0s;
     animation-iteration-count: infinite;
 }
 
@@ -834,8 +837,8 @@ main {
 .warm {
     animation-name: warm;
     animation-duration: 4s;
-    animation-delay: 0s;
     animation-timing-function: linear;
+    animation-delay: 0s;
     animation-iteration-count: infinite;
 }
 

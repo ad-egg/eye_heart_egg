@@ -135,46 +135,36 @@ function addHeart(hearts) {
     let heartBox = document.createElement('div');
     heartBox.classList.add('heart-box')
 
+    // first circle div for heart
+    let heartCircOne = document.createElement('div');
+    heartCircOne.classList.add('heart-circle-one');
+
+    // second circle div for heart
+    let heartCircTwo = document.createElement('div');
+    heartCircTwo.classList.add('heart-circle-two');
+
+    // square div for heart
+    let heartSq = document.createElement('div');
+    heartSq.classList.add('heart-square');
+
+    // tilted square div for heart
+    let tiltedHeart = document.createElement('div');
+    tiltedHeart.classList.add('tilted-heart');
+
+    // color changing heart
     if (hearts < 3 || isPrime(hearts)) {
-        // make the div for the hex code heart
-        let hexHeart = document.createElement('div');
-        hexHeart.classList.add('hex-heart');
-        hexHeart.classList.add('center');
-        hexHeart.classList.add('heartbeat');
-
-        // put in the hex code for the heart
-        hexHeart.innerHTML = '&#10084;';
-
-        // put the beating hex heart into the heart container div
-        heartBox.appendChild(hexHeart);
-    } else {
-        // first circle div for heart
-        let heartCircOne = document.createElement('div');
-        heartCircOne.classList.add('heart-circle-one');
         heartCircOne.classList.add('warm');
-
-        // second circle div for heart
-        let heartCircTwo = document.createElement('div');
-        heartCircTwo.classList.add('heart-circle-two');
         heartCircTwo.classList.add('warm');
-
-        // square div for heart
-        let heartSq = document.createElement('div');
-        heartSq.classList.add('heart-square');
         heartSq.classList.add('warm');
-
-        // tilted square div for heart
-        let tiltedHeart = document.createElement('div');
-        tiltedHeart.classList.add('tilted-heart');
-
-        // assemble the heart
-        tiltedHeart.appendChild(heartCircOne);
-        tiltedHeart.appendChild(heartCircTwo);
-        tiltedHeart.appendChild(heartSq);
-
-        // put the heart in the heart div container
-        heartBox.appendChild(tiltedHeart);
     }
+
+    // assemble the heart
+    tiltedHeart.appendChild(heartCircOne);
+    tiltedHeart.appendChild(heartCircTwo);
+    tiltedHeart.appendChild(heartSq);
+
+    // put the heart in the heart div container
+    heartBox.appendChild(tiltedHeart);
 
     // put the heart in the DOM
     document.getElementById('basket').appendChild(heartBox);

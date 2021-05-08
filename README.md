@@ -7,3 +7,6 @@
 2. click anywhere on page that is not at the top where the choices are
 3. I spent too much time on this please admire
 
+## features
+- light/dark theme toggle 
+- keyboard navigation 

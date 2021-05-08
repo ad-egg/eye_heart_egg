@@ -32,8 +32,11 @@
     --cyan: #00FFFF;
     --baby-blue: #89CFF0;
     --sky-blue: #87CEEB;
-    --navy-blue: #000080;
     --blue: #0000FF;
+    --navy-blue: #000080;
+    --dark-blue: #00008b;
+    --midnight-blue: #191970;
+    --dark-midnight-blue: #003366;
     --indigo: #4B0082;
     --violet: #A500FF;
     --purple: #800080;
@@ -68,9 +71,9 @@
     --sun-color: var(--gold);
     --sun-gradient: var(--orange);
     --sun-shadow: var(--orange);
-    --moon-border: var(--dark-gray);
+    --moon-border: var(--midnight-blue);
     --moon-color: var(--silver);
-    --moon-shadow: var(--dark-gray);
+    --moon-shadow: var(--midnight-blue);
     --egg-color: var(--eggshell);
     --egg-gradient: var(--med-light-yellow);
     --egg-shadow: var(--med-light-red);

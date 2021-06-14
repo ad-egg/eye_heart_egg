@@ -29,12 +29,12 @@
 
     <!-- main content -->
     <main>
-        <!-- pick a image to generate -->
-        <form name="choiceform">
-            <!-- fixed position div that covers viewport -->
-            <div id="entire-screen">
+        <!-- fixed position div that covers viewport -->
+        <div id="entire-screen">
+            <!-- pick a image to generate -->
+            <form name="choiceform">
                 <div id="user-choices">
-                    <span id="choices-radio">click for 
+                    <span id="choices-span">click for 
                         <!-- label has to come after the input as a sibling because of the CSS selector targeting it to change label bg color -->
                         <input name="choices" type="radio" id="input-eye" value="eye">
                         <label for="input-eye">eye</label>
@@ -42,24 +42,24 @@
                         <label for="input-heart">heart</label>
                         <input name="choices" type="radio" id="input-egg" value="egg" checked>
                         <label for="input-egg">egg</label>
+                    
+                        <!-- checkbox theme toggle -->
+                        <div id="theme-toggle-wrapper">
+                            <!-- checkbox is not visible -->
+                            <input type="checkbox" id="themeCheckbox">
+                            <!-- the label contains the visible part -->
+                            <label for="themeCheckbox" id="theme-label">
+                                <div id="theme-toggle" class="sun"></div>
+                                change theme
+                            </label>
+                        </div>
                     </span>
-
-                    <!-- working on a checkbox theme toggle -->
-                    <div id="theme-toggle-wrapper">
-                        <!-- checkbox is not visible -->
-                        <input type="checkbox" id="themeCheckbox">
-                        <!-- the label contains the visible part -->
-                        <label for="themeCheckbox" id="theme-label">
-                            <div id="theme-toggle" class="sun"></div>
-                            change theme
-                        </label>
-                    </div>
                 </div>
                 <button id="click-for-eye-heart-egg" class="center" type="button" onclick="generateEyeHeartEgg()">
                     click for eye, heart, or egg
                 </button>
-            </div>
-        </form>
+            </form>
+        </div>
 
         <!-- eggs go here -->
         <div id="basket" class="center"></div>

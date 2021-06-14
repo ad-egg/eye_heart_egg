@@ -22,6 +22,7 @@
 
     --red: #FF0000;
     --coral: #FF7F50;
+    --tangerine: #F28500;
     --orange: #FFA500;
     --gold: #FFD700;
     --burlywood: #DEB887;
@@ -68,9 +69,8 @@
     --background-color: var(--dark-gray);
     --color: var(--lighter-gray);
     --label-highlight: var(--indigo);
-    --sun-color: var(--gold);
-    --sun-gradient: var(--orange);
-    --sun-shadow: var(--orange);
+    --sun-ray-color: var(--gold);
+    --sun-color: var(--tangerine);
     --moon-border: var(--midnight-blue);
     --moon-color: var(--silver);
     --moon-shadow: var(--midnight-blue);
@@ -104,8 +104,7 @@
 
 /* body styling */
 body {
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0rem auto 0rem auto;
     padding: 0;
     box-sizing: border-box;
     display: flex;
@@ -118,7 +117,7 @@ body {
 }
 
 main {
-    width: inherit;
+    width: 100%;
 }
 
 /* centers text and items */
@@ -140,29 +139,31 @@ main {
     height: 100vh;
     margin: 0rem;
     padding: 0rem;
-    display: table;
     z-index: 42;
 }
 
-/* style the user choices (radio inputs and theme toggle) */
+/* style the user choices div (radio inputs and theme toggle) */
 #user-choices {
-    display: table-row;
-    border-collapse: collapse;
     width: 100%;
-    height: 3rem;
-    text-align: center;
+    min-height: 3rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
 }
 
 /* style the radio choices text */
 /* text-shadow: offset-x | offset-y | blur-radius | color */
-#choices-radio {
+/* text-shadow to help text stay readable when content scrolling under it */
+#choices-span {
     font-weight: bold;
     font-size: 2rem;
     text-shadow: 0rem 0rem 0.25rem var(--background-color);
 }
 
 /* pointer cursor when pass over label */
-#choices-radio label {
+#choices-span label {
     cursor: pointer;
 }
 
@@ -177,19 +178,23 @@ main {
 
 /* style the radio input labels when radio button is checked */
 /* + is adjacent sibling combinator, matches second element only if it immediately follows first element */
-#choices-radio input[type="radio"]:checked + label {
+#choices-span input[type="radio"]:checked + label {
     background-color: var(--label-highlight);
 }
 
 /* styling for full-screen button */
 #click-for-eye-heart-egg {
-    display: table-row;
     height: 100vh;
     width: 100%;
     border: none;
     padding: 0;
     opacity: 0;
     cursor: pointer;
+}
+
+#choices-span #theme-toggle-wrapper {
+    top: 0.25rem;
+    bottom: 0.25rem;
 }
 
 /* THEME TOGGLE */
@@ -223,8 +228,8 @@ main {
 /* in light theme this is crescent moon */
 #theme-toggle {
     position: absolute;
-    width: 100%;
-    height: 100%;
+    max-width: 100%;
+    max-height: 100%;
     box-sizing: border-box;
     top: 0%;
     right: 0%;
@@ -233,36 +238,40 @@ main {
     cursor: pointer;
 }
 
+/* in order of layers from bottom to top: element, :before, :after, content */
 /* theme toggle when it looks like sun */
+/* square for the sun rays */
 .sun {
     position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    top: 0%;
-    right: 0%;
-    bottom: 0%;
-    left: 0%;
-    background-color: var(--sun-color);
-    background-image: radial-gradient(var(--sun-gradient), var(--sun-color));
+    width: 75%;
+    height: 75%;
+    margin: 12.5%;
+    background-color: var(--sun-ray-color);
 }
 
-/* orange glow for sun */
-/* box-shadow: offset-x offset-y blur-radius spread-radius color, inset offset-x offset-y color */
+/* tilted square for the sun rays */
 .sun:before {
     content: '';
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 50%;
-    top: 0%;
-    right: 0%;
-    bottom: 0%;
-    left: 0%;
-    background-color: transparent;
-    box-shadow: 0rem 0rem 0.5rem 0.125rem var(--sun-shadow);
+    transform: rotate(45deg);
+    margin: 0%;
+    background-color: var(--sun-ray-color);
 }
 
+/* circle for sun */
+.sun:after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    width: 75%;
+    height: 75%;
+    margin: 12.5%;
+    background-color: var(--sun-color);
+}
+
+/* in order of layers from bottom to top: element, :before, :after, content */
 /* theme toggle when it looks like moon when light theme */
 /* silver moon with a dark border */
 .moon {
@@ -831,15 +840,6 @@ main {
     animation-iteration-count: infinite;
 }
 
-/* animates the orange glow for sun */
-.sun:hover:before {
-    animation-name: sun-glow;
-    animation-duration: 2s;
-    animation-timing-function: linear;
-    animation-delay: 0s;
-    animation-iteration-count: infinite;
-}
-
 /* linear change bg color red-orange-yellow-orange 2s nonstop */
 .warm {
     animation-name: warm;
@@ -894,17 +894,6 @@ main {
     }
     75% {
         transform: rotate(-22.5deg);
-    }
-}
-
-/* changes box-shadow blur radius and spread radius */
-/* box-shadow: offset-x offset-y blur-radius spread-radius color, inset offset-x offset-y color */
-@keyframes sun-glow {
-    0%, 100% {
-        box-shadow: 0rem 0rem 0.5rem 0.125rem var(--sun-shadow);
-    }
-    50% {
-        box-shadow: 0rem 0rem 0.75rem 0.125rem var(--sun-shadow);
     }
 }
 

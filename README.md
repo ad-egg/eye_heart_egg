@@ -1,6 +1,6 @@
 # eye_heart_egg
 
-![screenshot of eye_heart_egg](/imgs/eye_heart_egg.png)
+![screenshot of eye_heart_egg](/imgs/eye_heart_egg_20210613.png)
 
 ## how to use
 1. select the CSS art you want at the top (egg is chosen by default)

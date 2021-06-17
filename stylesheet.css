@@ -387,7 +387,11 @@ main {
 /* box-shadow order: top left, top right, bottom right, bottom left */
 .eyeball-iris {
     position: absolute;
-    margin: 25%;
+    margin: 0%;
+    top: 25%;
+    right: 25%;
+    bottom: 25%;
+    left: 25%;
     height: 50%;
     width: 50%;
     border-radius: 50%;
@@ -407,7 +411,11 @@ main {
 /* pupil of eyeball */
 .eyeball-pupil {
     position: absolute;
-    margin: 30%;
+    margin: 0%;
+    top: 30%;
+    right: 30%;
+    bottom: 30%;
+    left: 30%;
     height: 40%;
     width: 40%;
     border-radius: 50%;
@@ -866,10 +874,10 @@ main {
 /* move iris with pupil in it up and back down by change margin-top */
 @keyframes eyeroll-eyeball {
     0%, 10%, 60%, 100% {
-        margin-top: 25%;
+        top: 25%;
     }
     25%, 50% {
-        margin-top: -50%;
+        top: -50%;
     }
 }
 

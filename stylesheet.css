@@ -246,6 +246,10 @@ main {
     width: 75%;
     height: 75%;
     margin: 12.5%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
     background-color: var(--sun-ray-color);
 }
 
@@ -257,6 +261,10 @@ main {
     height: 100%;
     transform: rotate(45deg);
     margin: 0%;
+    top: 0%;
+    right: 0%;
+    bottom: 0%;
+    left: 0%;
     background-color: var(--sun-ray-color);
 }
 
@@ -267,7 +275,11 @@ main {
     border-radius: 50%;
     width: 75%;
     height: 75%;
-    margin: 12.5%;
+    margin: 0%;
+    top: 12.5%;
+    right: 12.5%;
+    bottom: 12.5%;
+    left: 12.5%;
     background-color: var(--sun-color);
 }
 
